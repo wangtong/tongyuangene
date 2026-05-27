@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgTrn" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef0f0"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#bgTrn)"/>
+
+  <!-- � -->
+  <g transform="translate(60,40)">
+    <rect x="0" y="0" width="480" height="240" rx="6" fill="#1a3a2a" stroke="#5a3a1a" stroke-width="8"/>
+    <!-- f -->
+    <g stroke="white" stroke-width="2" fill="none" opacity="0.95">
+      <!-- DNA -->
+      <path d="M 60,80 Q 90,100 60,120 Q 30,140 60,160 Q 90,180 60,200"/>
+      <path d="M 120,80 Q 90,100 120,120 Q 150,140 120,160 Q 90,180 120,200"/>
+      <line x1="60" y1="80" x2="120" y2="80"/>
+      <line x1="60" y1="200" x2="120" y2="200"/>
+    </g>
+    <g fill="white" font-family="Arial" font-size="14">
+      <text x="170" y="60" font-size="20" font-weight="bold">i�o�A</text>
+      <text x="170" y="100">1. pn(� (FastQC)</text>
+      <text x="170" y="130">2. ��� (BWA / Bowtie2)</text>
+      <text x="170" y="160">3. ��K (GATK)</text>
+      <text x="170" y="190">4. ��� (ANNOVAR)</text>
+      <text x="170" y="220">5. �� (R / Python)</text>
+    </g>
+  </g>
+
+  <!-- � -->
+  <g transform="translate(490,310)">
+    <circle cx="0" cy="-20" r="20" fill="#ffd9b3"/>
+    <rect x="-22" y="0" width="44" height="50" rx="6" fill="#cc0000"/>
+    <line x1="-15" y1="20" x2="-40" y2="0" stroke="#ffd9b3" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- fX -->
+  <g transform="translate(80,310)">
+    <!-- fX1 -->
+    <g>
+      <circle cx="0" cy="0" r="15" fill="#ffd9b3"/>
+      <rect x="-18" y="14" width="36" height="40" rx="4" fill="#0066cc"/>
+    </g>
+    <!-- fX2 -->
+    <g transform="translate(70,0)">
+      <circle cx="0" cy="0" r="15" fill="#e6c39e"/>
+      <rect x="-18" y="14" width="36" height="40" rx="4" fill="#00a896"/>
+    </g>
+    <!-- fX3 -->
+    <g transform="translate(140,0)">
+      <circle cx="0" cy="0" r="15" fill="#ffd9b3"/>
+      <rect x="-18" y="14" width="36" height="40" rx="4" fill="#ffa000"/>
+    </g>
+    <!-- fX4 -->
+    <g transform="translate(210,0)">
+      <circle cx="0" cy="0" r="15" fill="#e6c39e"/>
+      <rect x="-18" y="14" width="36" height="40" rx="4" fill="#6a1b9a"/>
+    </g>
+    <!-- fX5 -->
+    <g transform="translate(280,0)">
+      <circle cx="0" cy="0" r="15" fill="#ffd9b3"/>
+      <rect x="-18" y="14" width="36" height="40" rx="4" fill="#388e3c"/>
+    </g>
+  </g>
+
+  <!-- �L -->
+  <g fill="#8d6e63" opacity="0.6">
+    <rect x="60" y="380" width="380" height="6"/>
+    <rect x="70" y="386" width="6" height="40"/>
+    <rect x="420" y="386" width="6" height="40"/>
+  </g>
+
+  <!-- � -->
+  <g transform="translate(540,40)">
+    <circle cx="0" cy="0" r="30" fill="#cc0000"/>
+    <text x="0" y="6" text-anchor="middle" fill="white" font-family="Arial" font-size="14" font-weight="bold">�</text>
+  </g>
+</svg>

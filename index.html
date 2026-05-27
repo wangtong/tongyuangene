@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<script>(function(){var t=localStorage.getItem('ty-theme')||'light';document.documentElement.setAttribute('data-theme',t);})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>青岛同源基因科技有限责任公司 | 专注于新一代测序技术服务</title>
+<meta name="description" content="青岛同源基因科技有限责任公司专注于新一代测序技术服务，提供生物云计算、生物信息视频课程、AI+生物信息与技术文档等专业服务。">
+<meta name="keywords" content="同源基因,生物信息,生物云计算,NGS,新一代测序,基因学苑,青岛,生信培训">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23cc0000'/%3E%3Cstop offset='100%25' stop-color='%23ff4d4d'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3Cg stroke='white' stroke-width='1.8' fill='none' stroke-linecap='round'%3E%3Cpath d='M10,5 C22,10 22,16 10,21 C22,26 22,32 10,37'/%3E%3Cpath d='M22,5 C10,10 10,16 22,21 C10,26 10,32 22,37' opacity='0.65'/%3E%3Cline x1='11' y1='8' x2='21' y2='8'/%3E%3Cline x1='11' y1='17' x2='21' y2='17'/%3E%3Cline x1='11' y1='25' x2='21' y2='25'/%3E%3C/g%3E%3C/svg%3E">
+</head>
+<body data-page="index">
+<header class="header">
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon" aria-hidden="true"><svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><g transform="rotate(135 22 22)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"><path d="M8 16 C 16 10 28 10 36 16"/><path d="M8 28 C 16 34 28 34 36 28" opacity="0.7"/><path d="M14 18 L18 26"/><path d="M22 16 L22 28" opacity="0.8"/><path d="M30 18 L26 26"/></g></svg></span>
+            <span class="logo-text">
+                <span class="logo-name">青岛同源基因</span>
+                <span class="logo-en">TONGYUAN GENE</span>
+            </span>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="active" data-i18n="nav.home">首页</a></li>
+            <li><a href="cloud.html" data-i18n="nav.cloud">生物云计算</a></li>
+            <li><a href="video.html" data-i18n="nav.video">生物信息视频课程</a></li>
+            <li><a href="ai.html" data-i18n="nav.ai">AI+生物信息</a></li>
+            <li><a href="docs.html" data-i18n="nav.docs">技术文档</a></li>
+            <li><a href="about.html" data-i18n="nav.about">关于我们</a></li>
+        </ul>
+                        <div class="nav-actions">
+            <div class="nav-toolbar">
+                <button type="button" class="toolbar-btn" id="theme-toggle" aria-label="切换到暗色模式" title="暗色模式">
+                    <span class="theme-icon-light" aria-hidden="true">☀️</span>
+                    <span class="theme-icon-dark" aria-hidden="true">🌙</span>
+                </button>
+            </div>
+            <a href="about.html" class="btn btn-primary">联系我们</a>
+        </div>
+        <button class="nav-toggle" aria-label="切换导航">☰</button>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <span class="hero-tag" data-i18n-page="heroTag">SINCE 2015 · 专注十年</span>
+                <h1 class="hero-title"><span data-i18n-page="heroTitle">让生物数据分析</span><br><span class="highlight" data-i18n-page="heroHighlight">触手可及</span></h1>
+                <p class="hero-desc" data-i18n-page="heroDesc">
+                    青岛同源基因科技有限责任公司，专注新一代测序技术服务十年。
+                    我们提供生物云计算、视频课程、AI 辅助分析与技术文档，
+                    让每一位科研人员都能轻松完成生信分析。
+                </p>
+                <div class="hero-actions">
+                    <a href="cloud.html" class="btn btn-primary btn-lg" data-i18n-page="heroBtn1">免费试用云服务器</a>
+                    <a href="video.html" class="btn btn-outline btn-lg" data-i18n-page="heroBtn2">查看视频课程</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&auto=format&fit=crop&q=80"
+                     alt="DNA 双螺旋"
+                     onerror="this.onerror=null;this.src='images/dna-helix.svg'">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title center">国内领先的生物信息技术服务商</h2>
+        <p class="section-subtitle center">
+            我们的产品体系覆盖云计算、视频教学、AI 工具与技术文档，
+            为科研人员提供从入门到精通的一站式解决方案，已服务超过 30 万学员与 2000+ 云用户。
+        </p>
+
+        <div class="grid grid-4">
+            <div class="stat-item" style="text-align:center;">
+                <div class="stat-number" style="color: var(--primary);">10+</div>
+                <div class="stat-label" style="color: var(--gray-700);">深耕生信行业</div>
+            </div>
+            <div class="stat-item" style="text-align:center;">
+                <div class="stat-number" style="color: var(--primary);">30W+</div>
+                <div class="stat-label" style="color: var(--gray-700);">累计培训学员</div>
+            </div>
+            <div class="stat-item" style="text-align:center;">
+                <div class="stat-number" style="color: var(--primary);">2000+</div>
+                <div class="stat-label" style="color: var(--gray-700);">云平台付费用户</div>
+            </div>
+            <div class="stat-item" style="text-align:center;">
+                <div class="stat-number" style="color: var(--primary);">74</div>
+                <div class="stat-label" style="color: var(--gray-700);">台高性能服务器</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-light">
+    <div class="container">
+        <h2 class="section-title center">让科研更高效，让生信更简单</h2>
+        <p class="section-subtitle center">基于我们十年生信经验，构建覆盖云计算到 AI 智能的完整产品体系</p>
+
+        <div class="grid grid-4">
+            <a href="cloud.html" class="card product-card">
+                <div class="card-icon">☁️</div>
+                <h3 class="card-title">生物云计算</h3>
+                <p class="card-desc">2015 年全球最早推出共享生物云计算，50 台独享 + 24 台共享服务器，开箱即用，软件库齐全。</p>
+                <span class="card-link">立即体验</span>
+            </a>
+            <a href="video.html" class="card product-card">
+                <div class="card-icon">🎬</div>
+                <h3 class="card-title">视频课程</h3>
+                <p class="card-desc">1042 集 4K 视频课程，从零开始教学，赠送 30 万字讲义、PPT、案例代码，并配套微信答疑群。</p>
+                <span class="card-link">查看课程</span>
+            </a>
+            <a href="ai.html" class="card product-card">
+                <div class="card-icon">🤖</div>
+                <h3 class="card-title">AI+生物信息</h3>
+                <p class="card-desc">《驯龙高手》课程系统教你用 AI 辅助生信分析，文本、图片、语音、视频，全模态学习。</p>
+                <span class="card-link">解锁 AI 能力</span>
+            </a>
+            <a href="docs.html" class="card product-card">
+                <div class="card-icon">📚</div>
+                <h3 class="card-title">技术文档</h3>
+                <p class="card-desc">常用生信工具命令、分析流程模板与最佳实践，单页查阅，左侧目录持续更新。</p>
+                <span class="card-link">查看文档</span>
+            </a>
+</div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="feature-block">
+            <div class="feature-text">
+                <span class="feature-tag">生物云计算</span>
+                <h2>开箱即用的科研云<br>让算力不再是瓶颈</h2>
+                <p>
+                    自 2015 年率先推出共享生物云计算，平台已平稳运营超过十年。我们持续投入计算硬件，
+                    目前拥有 50 台独享服务器与 24 台共享云服务器，所有节点均已预装大量主流生信软件和数据库，
+                    无需手动配置环境，登录即可开始分析。
+                </p>
+                <ul class="feature-list">
+                    <li>独享 / 共享多档配置，灵活按需选购</li>
+                    <li>主流生信软件、参考数据库一键调用</li>
+                    <li>千兆专线，全球数据下载速度更快</li>
+                    <li>到期续费即可继续使用，账号永不丢失</li>
+                </ul>
+                <a href="cloud.html" class="btn btn-primary">了解更多 →</a>
+            </div>
+            <div class="feature-image">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&auto=format&fit=crop&q=80"
+                     alt="生物云计算服务器"
+                     loading="lazy"
+                     onerror="this.onerror=null;this.src='images/cloud-compute.svg'">
+            </div>
+        </div>
+
+        <div class="feature-block reverse">
+            <div class="feature-text">
+                <span class="feature-tag">AI+生物信息</span>
+                <h2>学习 AI，提高效率<br>如虎添翼，告别焦虑</h2>
+                <p>
+                    《驯龙高手：利用AI辅助生物信息分析》是一部足以改变整个生物数据生产方式的作品。
+                    我们将 AI 工具与多年生信实战经验深度融合，让零代码基础的学员也能上手，
+                    告别繁琐重复，专注科研创新。
+                </p>
+                <ul class="feature-list">
+                    <li>全年持续更新，AI 工具与时俱进</li>
+                    <li>大量真实科研案例，拍案叫绝</li>
+                    <li>覆盖文本、图片、语音、视频多模态</li>
+                    <li>专属答疑群，避坑经验沉淀</li>
+                </ul>
+                <a href="ai.html" class="btn btn-primary">立即学习 →</a>
+            </div>
+            <div class="feature-image">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&auto=format&fit=crop&q=80"
+                     alt="AI+生物信息"
+                     loading="lazy"
+                     onerror="this.onerror=null;this.src='images/ai-brain.svg'">
+            </div>
+        </div>
+
+        <div class="feature-block">
+            <div class="feature-text">
+                <span class="feature-tag">视频课程</span>
+                <h2>1042 集生信视频<br>从零开始，构筑你的科研技能树</h2>
+                <p>
+                    《基因学苑VIP课程（2025版）》是我们 10 年集大成制作，
+                    1042 集 4K 视频涵盖测序数据分析全流程，
+                    赠送 30 万字讲义与 10000+ 案例代码，配套云端实操，
+                    适合从小白到进阶用户系统学习。
+                </p>
+                <ul class="feature-list">
+                    <li>2025 最新版，AI 辅助生信内容全面加入</li>
+                    <li>6 个月上机操作，全部案例亲自上手</li>
+                    <li>5 年有效期，可开具发票</li>
+                    <li>微信答疑群，学习路上不孤单</li>
+                </ul>
+                <a href="video.html" class="btn btn-primary">查看课程详情 →</a>
+            </div>
+            <div class="feature-image">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&auto=format&fit=crop&q=80"
+                     alt="视频课程"
+                     loading="lazy"
+                     onerror="this.onerror=null;this.src='images/video-course.svg'">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="stats-section">
+    <div class="container">
+        <h2 class="section-title center" style="color:white;">值得信赖的合作伙伴</h2>
+        <p class="section-subtitle center" style="color:rgba(255,255,255,0.75);">
+            十年深耕生信教育与服务，与全国科研院所、医院、企业建立长期合作关系
+        </p>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">2015</div>
+                <div class="stat-label">公司成立年份</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">300K+</div>
+                <div class="stat-label">累计学员</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1042</div>
+                <div class="stat-label">视频教程集数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">学员满意度</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-light">
+    <div class="container">
+        <h2 class="section-title center">走进同源基因</h2>
+        <p class="section-subtitle center">从实验室到云端，从基础研究到 AI 创新 — 同源基因日常工作场景一览</p>
+
+        <div class="gallery">
+            <div class="gallery-item wide">
+                <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=900&auto=format&fit=crop&q=80"
+                     alt="DNA 研究" loading="lazy"
+                     onerror="this.onerror=null;this.src='images/dna-helix.svg'">
+                <div class="caption">基因测序数据分析</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600&auto=format&fit=crop&q=75"
+                     alt="实验室" loading="lazy"
+                     onerror="this.onerror=null;this.src='images/about-lab.svg'">
+                <div class="caption">实验室场景</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=600&auto=format&fit=crop&q=75"
+                     alt="测序设备" loading="lazy"
+                     onerror="this.onerror=null;this.src='images/about-lab.svg'">
+                <div class="caption">测序设备</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop&q=75"
+                     alt="服务器机房" loading="lazy"
+                     onerror="this.onerror=null;this.src='images/cloud-compute.svg'">
+                <div class="caption">高性能计算集群</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=600&auto=format&fit=crop&q=75"
+                     alt="科研团队" loading="lazy"
+                     onerror="this.onerror=null;this.src='images/training.svg'">
+                <div class="caption">科研团队</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600&auto=format&fit=crop&q=75"
+                     alt="AI 算力" loading="lazy"
+                     onerror="this.onerror=null;this.src='images/ai-brain.svg'">
+                <div class="caption">AI 算力中心</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=75"
+                     alt="数据分析" loading="lazy"
+                     onerror="this.onerror=null;this.src='images/analysis.svg'">
+                <div class="caption">生信数据分析</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title center">专业有料的技术主题</h2>
+        <p class="section-subtitle center">围绕新一代测序、AI 与云计算，我们持续输出可落地的实战经验</p>
+
+        <div class="article-list">
+            <article class="article-card">
+                <a href="cloud.html" class="article-thumb">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=75"
+                         alt="生物云计算" loading="lazy"
+                         onerror="this.onerror=null;this.src='images/cloud-compute.svg'">
+                </a>
+                <div class="article-body">
+                    <span class="article-cat">云计算</span>
+                    <h3>了解生物云计算</h3>
+                    <p>共享服务器多人同时使用，掌握计算资源调度与使用规范，让团队协同更高效。</p>
+                    <div class="article-meta">服务器配置 · 使用规范 · 购买指南</div>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <a href="ai.html" class="article-thumb">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&auto=format&fit=crop&q=75"
+                         alt="AI 生物信息" loading="lazy"
+                         onerror="this.onerror=null;this.src='images/ai-brain.svg'">
+                </a>
+                <div class="article-body">
+                    <span class="article-cat">人工智能</span>
+                    <h3>了解 AI 在生物信息中的应用</h3>
+                    <p>从 Claude Code 到多模态大模型，掌握 AI 工具如何重塑生物数据生产方式。</p>
+                    <div class="article-meta">提示词工程 · 多模态 · 案例驱动</div>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <a href="video.html" class="article-thumb">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&auto=format&fit=crop&q=75"
+                         alt="视频课程" loading="lazy"
+                         onerror="this.onerror=null;this.src='images/video-course.svg'">
+                </a>
+                <div class="article-body">
+                    <span class="article-cat">视频教学</span>
+                    <h3>了解生物信息学习路径</h3>
+                    <p>从零基础到资深工程师，按章节构建系统知识，配套案例与代码同步实操。</p>
+                    <div class="article-meta">入门到进阶 · 配套讲义 · 答疑陪伴</div>
+                </div>
+            </article>
+<article class="article-card">
+                <a href="docs.html" class="article-thumb">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop&q=75"
+                         alt="技术文档" loading="lazy"
+                         onerror="this.onerror=null;this.src='images/docs.svg'">
+                </a>
+                <div class="article-body">
+                    <span class="article-cat">技术文档</span>
+                    <h3>了解生信工具文档</h3>
+                    <p>FastQC、BWA、GATK、ANNOVAR 等主流工具的详细使用与最佳实践。</p>
+                    <div class="article-meta">命令手册 · 流程模板 · 最佳实践</div>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <a href="about.html" class="article-thumb">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&auto=format&fit=crop&q=75"
+                         alt="同源基因" loading="lazy"
+                         onerror="this.onerror=null;this.src='images/about-lab.svg'">
+                </a>
+                <div class="article-body">
+                    <span class="article-cat">关于同源</span>
+                    <h3>了解青岛同源基因</h3>
+                    <p>因为专注，所以专业。坐落于美丽的海滨城市青岛，专注新一代测序技术服务。</p>
+                    <div class="article-meta">公司简介 · 团队文化 · 联系方式</div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="image-banner">
+        <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1600&auto=format&fit=crop&q=80"
+             alt="基因测序" loading="lazy"
+             onerror="this.onerror=null;this.src='images/dna-helix.svg'">
+        <div class="banner-overlay">
+            <h2>因为专注，所以专业</h2>
+            <p>十年深耕新一代测序技术服务，超过 30 万学员的共同选择</p>
+        </div>
+    </div>
+</div>
+
+<section class="cta-section">
+    <div class="container">
+        <h2>开始你的生物信息之旅</h2>
+        <p>加入超过 30 万学员的行列，体验「因为专注，所以专业」的同源服务</p>
+        <a href="about.html" class="btn btn-lg">立即联系我们</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="logo-icon" aria-hidden="true"><svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><g transform="rotate(135 22 22)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"><path d="M8 16 C 16 10 28 10 36 16"/><path d="M8 28 C 16 34 28 34 36 28" opacity="0.7"/><path d="M14 18 L18 26"/><path d="M22 16 L22 28" opacity="0.8"/><path d="M30 18 L26 26"/></g></svg></span>
+                    <span>青岛同源基因</span>
+                </div>
+                <p>因为专注，所以专业。<br>专注新一代测序技术服务，<br>让生物数据分析触手可及。</p>
+            </div>
+            <div class="footer-col">
+                <h4>产品</h4>
+                <ul>
+                    <li><a href="cloud.html">生物云计算</a></li>
+            <li><a href="video.html">视频课程</a></li>
+            <li><a href="ai.html">AI+生物信息</a></li>
+                    <li><a href="docs.html">技术文档</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>资源</h4>
+                <ul>
+                    <li><a href="docs.html">技术文档</a></li>
+            <li><a href="docs.html#tools">生信工具</a></li>
+            <li><a href="docs.html#pipeline">流程模板</a></li>
+            <li><a href="video.html">试看视频</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>公司</h4>
+                <ul>
+                    <li><a href="about.html">关于我们</a></li>
+            <li><a href="about.html#contact">联系方式</a></li>
+            <li><a href="about.html#address">公司地址</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h4>联系我们</h4>
+                <p><strong>邮箱</strong>genomics@outlook.com</p>
+                <p><strong>地址</strong>山东省青岛市高新区秀园路1号科创慧谷(青岛)科技园 D-2-264</p>
+                <p><strong>网址</strong>www.tongyuangene.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span data-i18n="footer.copyright">版权所有 © 2026 同源基因</span>
+            <span class="footer-legal">
+                <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">鲁ICP备19022587号-2</a>
+            </span>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

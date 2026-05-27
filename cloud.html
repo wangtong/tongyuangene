@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<script>(function(){var t=localStorage.getItem('ty-theme')||'light';document.documentElement.setAttribute('data-theme',t);})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生物云计算 | 青岛同源基因科技有限责任公司</title>
+<meta name="description" content="基因学苑生物云平台，2015年全球最早推出共享生物云计算，50台独享 + 24台共享服务器，开箱即用。">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23cc0000'/%3E%3Cstop offset='100%25' stop-color='%23ff4d4d'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3Cg stroke='white' stroke-width='1.8' fill='none' stroke-linecap='round'%3E%3Cpath d='M10,5 C22,10 22,16 10,21 C22,26 22,32 10,37'/%3E%3Cpath d='M22,5 C10,10 10,16 22,21 C10,26 10,32 22,37' opacity='0.65'/%3E%3Cline x1='11' y1='8' x2='21' y2='8'/%3E%3Cline x1='11' y1='17' x2='21' y2='17'/%3E%3Cline x1='11' y1='25' x2='21' y2='25'/%3E%3C/g%3E%3C/svg%3E">
+</head>
+<body data-page="cloud">
+<header class="header">
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon" aria-hidden="true"><svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><g transform="rotate(135 22 22)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"><path d="M8 16 C 16 10 28 10 36 16"/><path d="M8 28 C 16 34 28 34 36 28" opacity="0.7"/><path d="M14 18 L18 26"/><path d="M22 16 L22 28" opacity="0.8"/><path d="M30 18 L26 26"/></g></svg></span>
+            <span class="logo-text">
+                <span class="logo-name">青岛同源基因</span>
+                <span class="logo-en">TONGYUAN GENE</span>
+            </span>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html" data-i18n="nav.home">首页</a></li>
+            <li><a href="cloud.html" class="active" data-i18n="nav.cloud">生物云计算</a></li>
+            <li><a href="video.html" data-i18n="nav.video">生物信息视频课程</a></li>
+            <li><a href="ai.html" data-i18n="nav.ai">AI+生物信息</a></li>
+            <li><a href="docs.html" data-i18n="nav.docs">技术文档</a></li>
+            <li><a href="about.html" data-i18n="nav.about">关于我们</a></li>
+        </ul>
+                        <div class="nav-actions">
+            <div class="nav-toolbar">
+                <button type="button" class="toolbar-btn" id="theme-toggle" aria-label="切换到暗色模式" title="暗色模式">
+                    <span class="theme-icon-light" aria-hidden="true">☀️</span>
+                    <span class="theme-icon-dark" aria-hidden="true">🌙</span>
+                </button>
+            </div>
+            <a href="about.html" class="btn btn-primary">联系我们</a>
+        </div>
+        <button class="nav-toggle" aria-label="切换导航">☰</button>
+    </nav>
+</header>
+
+<section class="subhero subhero-photo" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&auto=format&fit=crop&q=80');">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">首页</a> / <span>生物云计算</span>
+        </div>
+        <h1 data-i18n-page="heroTitle">基因学苑生物云平台</h1>
+        <p data-i18n-page="heroDesc">2015 年全球最早推出共享生物云计算，平稳运营超过十年，累计服务超过 2000 位用户。50 台独享 + 24 台共享服务器，开箱即用，无需配置环境。平台磁盘空间高达 <strong>4000T</strong>，满足海量组学数据存储需求。</p>
+    </div>
+</section>
+<div class="container">
+    <div class="storage-highlight">
+        <div class="badge-4000t" data-i18n-page="storageBadge">4000T 磁盘空间</div>
+        <p data-i18n-html="pages.cloud.storageHighlight">平台提供 <strong>4000T</strong> 级磁盘存储能力，支持 WGS、RNA-Seq、单细胞等海量测序数据的长期保存、备份与并行分析，告别「磁盘不够用」的焦虑。</p>
+    </div>
+</div>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title center" data-i18n-page="whyTitle">为什么选择我们的生物云平台</h2>
+        <p class="section-subtitle center" data-i18n-page="whySub">十年运营沉淀，提供从硬件、软件到数据库的完整生信解决方案</p>
+
+        <div class="grid grid-3">
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3 class="card-title">开箱即用</h3>
+                <p class="card-desc">所有服务器已预装大量主流生物软件和参考数据库，登录即可分析，无需手动安装与编译。</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔐</div>
+                <h3 class="card-title">独享 / 共享灵活</h3>
+                <p class="card-desc">提供独享服务器与共享服务器两种模式，按需购买，按需扩容，适应不同团队规模。</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌐</div>
+                <h3 class="card-title">国际网络专线</h3>
+                <p class="card-desc">配置国际网络专线，没有网络限制，公共数据库下载速度更快，科研效率更高。</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📦</div>
+                <h3 class="card-title">大量预装软件</h3>
+                <p class="card-desc">FastQC、BWA、GATK、samtools、ANNOVAR 等常用软件全部预装，免去环境配置烦恼。</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💾</div>
+                <h3 class="card-title" data-i18n-page="cardStorageTitle">4000T 级海量存储</h3>
+                <p class="card-desc" data-i18n-page="cardStorageDesc">平台磁盘空间高达 4000T，单机可挂载 TB 级数据盘，支持大型测序项目长期保存、备份与多项目并行分析。</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🛟</div>
+                <h3 class="card-title">技术支持</h3>
+                <p class="card-desc">微信答疑群 + 技术工程师远程协助，使用过程中遇到问题随时获得帮助。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-light">
+    <div class="container">
+        <div class="feature-block">
+            <div class="feature-text">
+                <span class="feature-tag">云服务器资源</span>
+                <h2>74 台高性能服务器<br>满足从入门到大规模分析</h2>
+                <p>
+                    根据计算需求不同，我们提供 50 台独享服务器以及 24 台共享云服务器可供选择。
+                    所有服务器开箱即用，里面已包含大量生物软件和数据库。
+                </p>
+                <ul class="feature-list">
+                    <li>独享服务器：单用户独占，配置可达 128 核 / 1TB 内存</li>
+                    <li>共享服务器：多人协作，按规范公平使用资源</li>
+                    <li>所有节点预装 Linux + 主流生信软件栈</li>
+                    <li>到期续费即可继续使用，账号永不丢失</li>
+                </ul>
+                <a href="#price" class="btn btn-primary">查看价格表</a>
+            </div>
+            <div class="feature-image">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&auto=format&fit=crop&q=80" alt="云计算资源" loading="lazy" onerror="this.onerror=null;this.src='images/cloud-compute.svg'">
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="image-banner">
+        <img src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=1600&auto=format&fit=crop&q=80" alt="数据中心" loading="lazy" onerror="this.onerror=null;this.src='images/cloud-compute.svg'">
+        <div class="banner-overlay">
+            <h2>74 台高性能计算节点 7×24 在线</h2>
+            <p>稳定运行十年，累计支撑超过 2000 位用户的生信分析任务</p>
+        </div>
+    </div>
+</div>
+
+<section class="section" id="cloud-history">
+    <div class="container">
+        <div class="content-block cloud-history-block">
+            <h2 class="cloud-history-title">基因学苑生物云平台发展历史</h2>
+            <p class="cloud-history-intro">
+                从 2015 年 3 月我们率先在全球提供共享生物云计算平台开始，距今已经 11 年，每一年都在稳步前进。
+                目前我们平台已经包含共享云服务器、独享云服务器、GPU 计算、全闪存存储计算、国际网络专线、内置 AI 工具等领先技术。
+            </p>
+
+            <div class="table-wrap">
+                <table class="data-table cloud-history-table">
+                    <thead>
+                        <tr>
+                            <th>时间</th>
+                            <th>更新内容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2015 年</td>
+                            <td>全球首创共享生物计算品类，通过公有云实现</td>
+                        </tr>
+                        <tr>
+                            <td>2016 年 - 2017 年</td>
+                            <td>为全球大量用户提供生物云计算</td>
+                        </tr>
+                        <tr>
+                            <td>2018 年</td>
+                            <td>自建私有生物云计算平台</td>
+                        </tr>
+                        <tr>
+                            <td>2019 年</td>
+                            <td>提供 1T 内存计算平台</td>
+                        </tr>
+                        <tr>
+                            <td>2020 年</td>
+                            <td>加入 GPU 运算平台</td>
+                        </tr>
+                        <tr>
+                            <td>2021 年</td>
+                            <td>提供 v 系列配合生物信息视频课程练习专属平台</td>
+                        </tr>
+                        <tr>
+                            <td>2022 年 - 2023 年</td>
+                            <td>每年新部署更多机器，配置更加丰富，包含 A B C D E V 六档 9 个配置可供用户选择</td>
+                        </tr>
+                        <tr>
+                            <td>2024 年</td>
+                            <td>
+                                <ol>
+                                    <li>使用全新 Dell EMC 集中式存储，数据更加安全高效</li>
+                                    <li>使用超融合计算平台</li>
+                                    <li>提供独享云服务器可供用户选择</li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2025 年</td>
+                            <td>
+                                <ol>
+                                    <li>提供国际网络专线，实现全球网络全覆盖，可以方便使用 docker、GitHub、NCBI 等</li>
+                                    <li>加入 AI 计算，提供 Claude Code、Gemini CLI、Qwen Coder、Codex，添加密钥开箱即用</li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2026 年</td>
+                            <td>
+                                <ol>
+                                    <li>引入全新 Dell EMC 全闪存存储</li>
+                                    <li>升级 GPU 计算性能</li>
+                                    <li>升级存储系统，磁盘总容量已超过 4000T</li>
+                                </ol>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-light" id="price">
+    <div class="container">
+        <h2 class="section-title center">生物云服务器配置与价格表（2026）</h2>
+        <p class="section-subtitle center">支持微信、支付宝转账及对公付款；给定用户名和邮箱即可开通账号，到期续费可继续使用。</p>
+
+        <div class="price-table-section">
+            <h3>共享系列</h3>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>产品级别</th>
+                            <th>产品型号</th>
+                            <th>CPU 线程数</th>
+                            <th>内存</th>
+                            <th>网络</th>
+                            <th>磁盘大小</th>
+                            <th>季度价格（元）</th>
+                            <th>包年价格（元）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>共享 A 系列</td><td>A1</td><td>56</td><td>256G</td><td>100M 国际专线</td><td>512G</td><td>1,000</td><td>3,500</td></tr>
+                        <tr><td>共享 A 系列</td><td>A2</td><td>96</td><td>256G</td><td>100M 国际专线</td><td>1T</td><td>1,500</td><td>5,000</td></tr>
+                        <tr><td>共享 B 系列</td><td>B1</td><td>128</td><td>512G</td><td>100M 国际专线</td><td>1T</td><td>2,000</td><td>7,500</td></tr>
+                        <tr><td>共享 B 系列</td><td>B2</td><td>128</td><td>512G</td><td>100M 国际专线</td><td>3T</td><td>3,000</td><td>10,000</td></tr>
+                        <tr><td>共享 C 系列</td><td>C1</td><td>128</td><td>1T</td><td>100M 国际专线</td><td>3T</td><td>4,000</td><td>15,000</td></tr>
+                        <tr><td>共享 C 系列</td><td>C2</td><td>256</td><td>1T</td><td>100M 国际专线</td><td>4T</td><td>6,000</td><td>20,000</td></tr>
+                        <tr><td>共享 D 系列</td><td>D1</td><td>256</td><td>2T</td><td>100M 国际专线</td><td>4T</td><td>7,000</td><td>25,000</td></tr>
+                        <tr><td>共享 E 系列 GPU</td><td>E1（v100s 32G）</td><td>256</td><td>2T</td><td>100M 国际专线</td><td>5T</td><td>8,000</td><td>30,000</td></tr>
+                        <tr><td>共享 E 系列 GPU</td><td>E2（A100 80G）</td><td>256</td><td>2T</td><td>100M 国际专线</td><td>5T</td><td>10,000</td><td>35,000</td></tr>
+                        <tr><td>共享 G 系列 全闪存 GPU</td><td>G1（A100 80G）</td><td>256</td><td>2T</td><td>100M 国际专线</td><td>3T（全闪存）</td><td>12,000</td><td>40,000</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="price-table-section">
+            <h3>独享系列</h3>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>产品级别</th>
+                            <th>产品型号</th>
+                            <th>CPU 线程数</th>
+                            <th>内存</th>
+                            <th>网络</th>
+                            <th>磁盘大小</th>
+                            <th>季度价格（元）</th>
+                            <th>包年价格（元）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>独享云服务器</td><td>S1</td><td>32</td><td>128G</td><td>100M 国际专线</td><td>4T</td><td>6,000</td><td>20,000</td></tr>
+                        <tr><td>独享云服务器</td><td>S2</td><td>64</td><td>256G</td><td>100M 国际专线</td><td>8T</td><td>9,000</td><td>30,000</td></tr>
+                        <tr><td>独享云服务器</td><td>S3</td><td>128</td><td>512G</td><td>100M 国际专线</td><td>15T</td><td>15,000</td><td>50,000</td></tr>
+                        <tr><td>独享云服务器</td><td>S4</td><td>128</td><td>1T</td><td>100M 国际专线</td><td>20T</td><td>25,000</td><td>80,000</td></tr>
+                        <tr><td>独享云服务器</td><td>S5</td><td>256</td><td>2T</td><td>100M 国际专线</td><td>30T</td><td>30,000</td><td>100,000</td></tr>
+                        <tr><td>独享 GPU 云服务器</td><td>S2G（10G GPU）</td><td>64</td><td>256G</td><td>100M 国际专线</td><td>3T（全闪存）</td><td>12,000</td><td>40,000</td></tr>
+                        <tr><td>独享 GPU 云服务器</td><td>S3G（20G GPU）</td><td>128</td><td>512G</td><td>100M 国际专线</td><td>4T（全闪存）</td><td>20,000</td><td>70,000</td></tr>
+                        <tr><td>独享 GPU 云服务器</td><td>S4G（40G GPU）</td><td>128</td><td>1T</td><td>100M 国际专线</td><td>6T（全闪存）</td><td>30,000</td><td>100,000</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="price-notes">
+            <div class="tip-box">
+                <strong>说明：</strong>
+                <ol>
+                    <li>独享版服务器包含 root 权限，适合课题组多人同时使用。</li>
+                    <li>磁盘可以额外增加：机械硬盘 200 元 / 1T / 月，全闪存 500 元 / 1T / 月。</li>
+                    <li>100M 国际专线可直接访问全球网络。</li>
+                </ol>
+            </div>
+            <p style="text-align:center; color: var(--gray-600); margin-top:20px; font-size:14px;">
+                * 以上价格以最新报价单为准，可开具增值税普通发票 / 专用发票。购买前请联系客服确认机型与库存。
+            </p>
+        </div>
+
+        <div style="text-align:center; margin-top:32px;">
+            <a href="about.html" class="btn btn-primary btn-lg">联系客服购买</a>
+        </div>
+    </div>
+</section>
+<section class="section section-light">
+    <div class="container container-narrow">
+        <div class="content-block">
+            <h2>如何购买</h2>
+            <p>
+                购买流程简单透明，只需三步即可开通您的专属生物云账号：
+            </p>
+
+            <div class="grid grid-3" style="margin-top: 32px;">
+                <div class="card">
+                    <div class="card-icon">📱</div>
+                    <h3 class="card-title">1. 联系客服</h3>
+                    <p class="card-desc">添加我们的微信公众号或微信客服，咨询适合您的套餐方案。</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💳</div>
+                    <h3 class="card-title">2. 支付费用</h3>
+                    <p class="card-desc">支持微信、支付宝转账，对公付款也可以。可开具发票。</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🚀</div>
+                    <h3 class="card-title">3. 开通使用</h3>
+                    <p class="card-desc">提供用户名和邮箱，5 分钟内即可开通账号，立即开始分析。</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <h2>开始你的云端生信之旅</h2>
+        <p>添加微信即可开通账号，立即体验 74 台高性能服务器带来的算力盛宴</p>
+        <a href="about.html" class="btn btn-lg">立即联系客服</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="logo-icon" aria-hidden="true"><svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><g transform="rotate(135 22 22)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"><path d="M8 16 C 16 10 28 10 36 16"/><path d="M8 28 C 16 34 28 34 36 28" opacity="0.7"/><path d="M14 18 L18 26"/><path d="M22 16 L22 28" opacity="0.8"/><path d="M30 18 L26 26"/></g></svg></span>
+                    <span>青岛同源基因</span>
+                </div>
+                <p>因为专注，所以专业。<br>专注新一代测序技术服务，<br>让生物数据分析触手可及。</p>
+            </div>
+            <div class="footer-col">
+                <h4>产品</h4>
+                <ul>
+                    <li><a href="cloud.html" class="active">生物云计算</a></li>
+            <li><a href="video.html">视频课程</a></li>
+            <li><a href="ai.html">AI+生物信息</a></li>
+                    <li><a href="docs.html">技术文档</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>资源</h4>
+                <ul>
+                    <li><a href="docs.html">技术文档</a></li>
+            <li><a href="docs.html#tools">生信工具</a></li>
+            <li><a href="docs.html#pipeline">流程模板</a></li>
+            <li><a href="video.html">试看视频</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>公司</h4>
+                <ul>
+                    <li><a href="about.html">关于我们</a></li>
+            <li><a href="about.html#contact">联系方式</a></li>
+            <li><a href="about.html#address">公司地址</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h4>联系我们</h4>
+                <p><strong>邮箱</strong>genomics@outlook.com</p>
+                <p><strong>地址</strong>山东省青岛市高新区秀园路1号科创慧谷(青岛)科技园 D-2-264</p>
+                <p><strong>网址</strong>www.tongyuangene.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span data-i18n="footer.copyright">版权所有 © 2026 同源基因</span>
+            <span class="footer-legal">
+                <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">鲁ICP备19022587号-2</a>
+            </span>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

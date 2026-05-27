@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<script>(function(){var t=localStorage.getItem('ty-theme')||'light';document.documentElement.setAttribute('data-theme',t);})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>技术文档 | 青岛同源基因科技有限责任公司</title>
+<meta name="description" content="生物信息技术文档：常用工具命令、分析流程模板、最佳实践、API 参考。">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23cc0000'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-size='18' font-weight='bold' fill='white'%3E同%3C/text%3E%3C/svg%3E">
+</head>
+<body data-page="docs">
+
+<!-- 顶部导航 -->
+<header class="header">
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon" aria-hidden="true"><svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><g transform="rotate(135 22 22)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"><path d="M8 16 C 16 10 28 10 36 16"/><path d="M8 28 C 16 34 28 34 36 28" opacity="0.7"/><path d="M14 18 L18 26"/><path d="M22 16 L22 28" opacity="0.8"/><path d="M30 18 L26 26"/></g></svg></span>
+            <span class="logo-text">
+                <span class="logo-name">青岛同源基因</span>
+                <span class="logo-en">TONGYUAN GENE</span>
+            </span>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="cloud.html">生物云计算</a></li>
+            <li><a href="video.html">生物信息视频课程</a></li>
+            <li><a href="ai.html">AI+生物信息</a></li>
+            <li><a href="docs.html" class="active">技术文档</a></li>
+            <li><a href="about.html">关于我们</a></li>
+        </ul>
+                <div class="nav-actions">
+            <div class="nav-toolbar">
+                <button type="button" class="toolbar-btn" id="theme-toggle" aria-label="切换到暗色模式" title="暗色模式">
+                    <span class="theme-icon-light" aria-hidden="true">☀️</span>
+                    <span class="theme-icon-dark" aria-hidden="true">🌙</span>
+                </button>
+            </div>
+            <a href="about.html" class="btn btn-primary">联系我们</a>
+        </div>
+        <button class="nav-toggle" aria-label="切换导航">☰</button>
+    </nav>
+</header>
+
+<!-- 副 Hero -->
+<section class="subhero">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">首页</a> / <span>技术文档</span>
+        </div>
+        <h1>技术文档中心</h1>
+        <p>主流生信工具的使用指南、分析流程模板与最佳实践。所有文档基于真实科研项目验证，确保拿来即用。</p>
+    </div>
+</section>
+
+<!-- 文档主体 -->
+<section class="section">
+    <div class="container">
+                <div class="docs-layout">
+            <div class="docs-content">
+                <!-- 快速开始 -->
+                <div class="content-block" id="quickstart">
+                    <h2>快速开始</h2>
+                    <p>本文档面向已经购买生物云服务器的用户。如果你还没有账号，请前往 <a href="cloud.html">生物云计算</a> 页面了解购买方式。</p>
+
+                    <h3>登录服务器</h3>
+                    <p>使用 SSH 客户端（推荐 MobaXterm / Termius / Tabby）连接我们的服务器：</p>
+
+                    <div class="code-block">
+<span class="cmt"># Linux / macOS 用户</span>
+<span class="cmd">ssh</span> <span class="opt">-p</span> 22 username@bio.tongyuangene.com
+
+<span class="cmt"># Windows 用户推荐使用 MobaXterm 或 Tabby</span>
+                    </div>
+
+                    <h3>查看可用资源</h3>
+                    <div class="code-block">
+<span class="cmt"># 查看 CPU 使用情况</span>
+<span class="cmd">htop</span>
+
+<span class="cmt"># 查看磁盘空间</span>
+<span class="cmd">df</span> <span class="opt">-h</span>
+
+<span class="cmt"># 查看内存</span>
+<span class="cmd">free</span> <span class="opt">-h</span>
+                    </div>
+
+                    <div class="warn-box">
+                        <strong>⚠️ 重要：</strong>
+                        共享服务器请遵守使用规范，每个用户总线程数不要超过总数的一半，
+                        切勿一次性占用全部资源造成其他用户卡顿。
+                    </div>
+                </div>
+
+                <!-- 常用工具命令 -->
+                <div class="content-block" id="tools">
+                    <h2>常用工具命令</h2>
+                    <p>以下整理了我们日常使用频率最高的生信工具的核心命令，更多细节请参考视频课程。</p>
+
+                    <h3 id="tool-fastqc">FastQC：测序数据质控</h3>
+                    <div class="code-block">
+<span class="cmt"># 单个样本质控</span>
+<span class="cmd">fastqc</span> <span class="opt">-o</span> output_dir input.fastq.gz
+
+<span class="cmt"># 多线程批量质控</span>
+<span class="cmd">fastqc</span> <span class="opt">-t</span> 8 <span class="opt">-o</span> output_dir <span class="str">*.fastq.gz</span>
+
+<span class="cmt"># 合并报告</span>
+<span class="cmd">multiqc</span> output_dir<span class="opt">/</span>
+                    </div>
+
+                    <h3 id="tool-bwa">BWA：序列比对</h3>
+                    <div class="code-block">
+<span class="cmt"># 建立参考基因组索引</span>
+<span class="cmd">bwa</span> index reference.fa
+
+<span class="cmt"># 双端比对</span>
+<span class="cmd">bwa</span> mem <span class="opt">-t</span> 16 <span class="opt">-R</span> <span class="str">"@RG\tID:S1\tSM:S1\tLB:S1\tPL:ILLUMINA"</span> \
+    reference.fa S1_R1.fq.gz S1_R2.fq.gz | <span class="cmd">samtools</span> sort <span class="opt">-@</span> 8 <span class="opt">-o</span> S1.sorted.bam
+                    </div>
+
+                    <h3 id="tool-gatk">GATK：变异检测</h3>
+                    <div class="code-block">
+<span class="cmt"># 标记重复</span>
+<span class="cmd">gatk</span> MarkDuplicates <span class="opt">-I</span> input.bam <span class="opt">-O</span> marked.bam <span class="opt">-M</span> metrics.txt
+
+<span class="cmt"># 调用变异</span>
+<span class="cmd">gatk</span> HaplotypeCaller <span class="opt">-R</span> reference.fa <span class="opt">-I</span> marked.bam <span class="opt">-O</span> variants.vcf.gz
+
+<span class="cmt"># 过滤</span>
+<span class="cmd">gatk</span> VariantFiltration <span class="opt">-R</span> reference.fa <span class="opt">-V</span> variants.vcf.gz \
+    <span class="opt">--filter-expression</span> <span class="str">"QD &lt; 2.0"</span> <span class="opt">--filter-name</span> <span class="str">"LowQD"</span> <span class="opt">-O</span> filtered.vcf.gz
+                    </div>
+
+                    <h3 id="tool-samtools">samtools：BAM 文件处理</h3>
+                    <div class="code-block">
+<span class="cmt"># 索引</span>
+<span class="cmd">samtools</span> index input.bam
+
+<span class="cmt"># 排序</span>
+<span class="cmd">samtools</span> sort <span class="opt">-@</span> 8 <span class="opt">-o</span> sorted.bam input.bam
+
+<span class="cmt"># 比对统计</span>
+<span class="cmd">samtools</span> flagstat input.bam
+
+<span class="cmt"># 深度统计</span>
+<span class="cmd">samtools</span> depth <span class="opt">-a</span> input.bam | <span class="cmd">awk</span> <span class="str">'{sum+=$3} END {print sum/NR}'</span>
+                    </div>
+                </div>
+
+                <!-- 分析流程模板 -->
+                <div class="content-block" id="pipeline">
+                    <h2>分析流程模板</h2>
+                    <p>以下是几个常用的端到端分析流程模板，可以作为新项目的起点。</p>
+
+                    <h3 id="pipeline-wgs">WGS 全基因组重测序流程</h3>
+                    <div class="code-block">
+<span class="cmt">#!/bin/bash</span>
+<span class="cmt"># 全基因组重测序标准流程</span>
+
+REF=<span class="str">"/data/ref/hg38.fa"</span>
+SAMPLE=$1
+THREADS=16
+
+<span class="cmt"># Step 1: 质控</span>
+<span class="cmd">fastqc</span> <span class="opt">-t</span> $THREADS <span class="opt">-o</span> qc/ ${SAMPLE}_R1.fq.gz ${SAMPLE}_R2.fq.gz
+
+<span class="cmt"># Step 2: 比对</span>
+<span class="cmd">bwa</span> mem <span class="opt">-t</span> $THREADS <span class="opt">-R</span> <span class="str">"@RG\tID:$SAMPLE\tSM:$SAMPLE\tLB:$SAMPLE\tPL:ILLUMINA"</span> \
+    $REF ${SAMPLE}_R1.fq.gz ${SAMPLE}_R2.fq.gz | \
+    <span class="cmd">samtools</span> sort <span class="opt">-@</span> $THREADS <span class="opt">-o</span> ${SAMPLE}.sorted.bam
+
+<span class="cmt"># Step 3: 标记重复</span>
+<span class="cmd">gatk</span> MarkDuplicates <span class="opt">-I</span> ${SAMPLE}.sorted.bam <span class="opt">-O</span> ${SAMPLE}.dedup.bam <span class="opt">-M</span> ${SAMPLE}.metrics.txt
+
+<span class="cmt"># Step 4: 调用变异</span>
+<span class="cmd">gatk</span> HaplotypeCaller <span class="opt">-R</span> $REF <span class="opt">-I</span> ${SAMPLE}.dedup.bam <span class="opt">-O</span> ${SAMPLE}.g.vcf.gz <span class="opt">-ERC</span> GVCF
+
+<span class="cmt"># Step 5: 联合分型</span>
+<span class="cmd">gatk</span> GenotypeGVCFs <span class="opt">-R</span> $REF <span class="opt">-V</span> ${SAMPLE}.g.vcf.gz <span class="opt">-O</span> ${SAMPLE}.vcf.gz
+
+<span class="cmt"># Step 6: 注释</span>
+<span class="cmd">table_annovar.pl</span> ${SAMPLE}.vcf.gz humandb/ <span class="opt">-buildver</span> hg38 \
+    <span class="opt">-out</span> ${SAMPLE} <span class="opt">-protocol</span> refGene,clinvar_20240611 <span class="opt">-operation</span> g,f
+                    </div>
+
+                    <h3 id="pipeline-rnaseq">RNA-Seq 转录组分析流程</h3>
+                    <div class="code-block">
+<span class="cmt">#!/bin/bash</span>
+<span class="cmt"># RNA-Seq 标准流程（hisat2 + featureCounts）</span>
+
+REF_INDEX=<span class="str">"/data/ref/hisat2_index"</span>
+GTF=<span class="str">"/data/ref/hg38.gtf"</span>
+SAMPLE=$1
+
+<span class="cmt"># Step 1: 比对</span>
+<span class="cmd">hisat2</span> <span class="opt">-p</span> 16 <span class="opt">-x</span> $REF_INDEX \
+    <span class="opt">-1</span> ${SAMPLE}_R1.fq.gz <span class="opt">-2</span> ${SAMPLE}_R2.fq.gz \
+    <span class="opt">-S</span> ${SAMPLE}.sam
+
+<span class="cmt"># Step 2: 转换排序</span>
+<span class="cmd">samtools</span> sort <span class="opt">-@</span> 8 <span class="opt">-o</span> ${SAMPLE}.bam ${SAMPLE}.sam &amp;&amp; rm ${SAMPLE}.sam
+
+<span class="cmt"># Step 3: 计数</span>
+<span class="cmd">featureCounts</span> <span class="opt">-T</span> 8 <span class="opt">-p</span> <span class="opt">-a</span> $GTF <span class="opt">-o</span> ${SAMPLE}.counts ${SAMPLE}.bam
+
+<span class="cmt"># Step 4: R 中使用 DESeq2 做差异分析（另起脚本）</span>
+                    </div>
+                </div>
+
+                <!-- 最佳实践 -->
+                <div class="content-block" id="best-practice">
+                    <h2>最佳实践</h2>
+
+                    <h3>1. 文件组织规范</h3>
+                    <p>建议按以下结构组织项目文件，便于团队协作与归档：</p>
+                    <div class="code-block">
+project/
+├── raw_data/      <span class="cmt"># 原始测序数据（只读）</span>
+├── qc/            <span class="cmt"># 质控结果</span>
+├── alignment/     <span class="cmt"># BAM 文件</span>
+├── variant/       <span class="cmt"># 变异结果</span>
+├── annotation/    <span class="cmt"># 注释结果</span>
+├── scripts/       <span class="cmt"># 分析脚本</span>
+├── results/       <span class="cmt"># 最终结果与图表</span>
+└── README.md      <span class="cmt"># 项目说明</span>
+                    </div>
+
+                    <h3>2. 资源使用建议</h3>
+                    <ul>
+                        <li>共享服务器：单任务建议线程数不超过 16，内存不超过 64G</li>
+                        <li>大型分析任务请提前申请独享服务器</li>
+                        <li>中间文件（如 SAM）请及时清理或转换为压缩格式（BAM）</li>
+                        <li>使用 <code>nohup</code> 或 <code>screen</code> 保持长任务运行</li>
+                    </ul>
+
+                    <h3>3. 数据备份策略</h3>
+                    <div class="tip-box">
+                        <strong>💡 推荐：</strong>
+                        采用「3-2-1」原则：3 份拷贝，2 种介质，1 份异地。
+                        我们的云服务器自带备份，但重要原始数据建议本地额外保存。
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <div class="content-block" id="faq">
+                    <h2>常见问题</h2>
+
+                    <h3>Q: 如何申请云服务器试用账号？</h3>
+                    <p>A: 请添加微信客服，提供姓名与单位信息，我们会为新用户开通 3 天免费试用账号。</p>
+
+                    <h3>Q: 服务器到期后数据会被清空吗？</h3>
+                    <p>A: 不会。账号到期后我们会保留数据 30 天，期间续费可恢复全部内容；超过 30 天未续费才会清理。</p>
+
+                    <h3>Q: 可以自行安装软件吗？</h3>
+                    <p>A: 共享服务器只能在个人目录下安装；独享服务器拥有 root 权限，可自由安装任何软件。</p>
+
+                    <h3>Q: 是否支持 GPU 计算？</h3>
+                    <p>A: 我们有 GPU 服务器可供选购，配备 NVIDIA 高性能卡，适合 AI 模型训练与深度学习推理任务。</p>
+
+                    <h3>Q: 培训证书可用于职称评定吗？</h3>
+                    <p>A: 我们颁发的是企业培训证书，部分单位可作为继续教育学时认定，具体请咨询所在单位人事部门。</p>
+
+                    <h3>Q: 视频课程可以分享给同事观看吗？</h3>
+                    <p>A: 课程仅授权给购买者本人观看，未经授权分享将影响后续续费与服务支持。如团队需要，建议团报享受优惠。</p>
+                </div>
+
+                <div class="cta-section" style="margin-top: 32px; border-radius: var(--radius-lg); padding: 40px;">
+                    <h2 style="font-size: 24px;">没找到你想了解的内容？</h2>
+                    <p>欢迎随时联系我们的技术工程师获取个性化解答</p>
+                    <a href="about.html" class="btn">联系技术支持</a>
+                </div>
+            </div>
+            <aside class="doc-toc" aria-label="本文目录">
+                <h4>本文目录</h4>
+                <nav>
+                    <ul class="doc-toc-main">
+                        <li><a href="#quickstart">快速开始</a></li>
+                        <li><a href="#tools">常用工具命令</a>
+                            <ul class="doc-toc-sub">
+                                <li><a href="#tool-fastqc">FastQC 质控</a></li>
+                                <li><a href="#tool-bwa">BWA 比对</a></li>
+                                <li><a href="#tool-gatk">GATK 变异</a></li>
+                                <li><a href="#tool-samtools">samtools</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#pipeline">分析流程模板</a>
+                            <ul class="doc-toc-sub">
+                                <li><a href="#pipeline-wgs">WGS 重测序</a></li>
+                                <li><a href="#pipeline-rnaseq">RNA-Seq</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#best-practice">最佳实践</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                    </ul>
+                    <p class="doc-toc-note">本目录会随页面滚动高亮当前小节，章节将在此持续更新。</p>
+                </nav>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="logo-icon" aria-hidden="true"><svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><g transform="rotate(135 22 22)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"><path d="M8 16 C 16 10 28 10 36 16"/><path d="M8 28 C 16 34 28 34 36 28" opacity="0.7"/><path d="M14 18 L18 26"/><path d="M22 16 L22 28" opacity="0.8"/><path d="M30 18 L26 26"/></g></svg></span>
+                    <span>青岛同源基因</span>
+                </div>
+                <p>因为专注，所以专业。<br>专注新一代测序技术服务，<br>让生物数据分析触手可及。</p>
+            </div>
+            <div class="footer-col">
+                <h4>产品</h4>
+                <ul>
+                    <li><a href="cloud.html">生物云计算</a></li>
+                    <li><a href="video.html">视频课程</a></li>
+                    <li><a href="ai.html">AI+生物信息</a></li>
+                    <li><a href="docs.html">技术文档</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>资源</h4>
+                <ul>
+                    <li><a href="docs.html">技术文档</a></li>
+                    <li><a href="docs.html#tools">生信工具</a></li>
+                    <li><a href="docs.html#pipeline">流程模板</a></li>
+                    <li><a href="video.html">试看视频</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>公司</h4>
+                <ul>
+                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="about.html#contact">联系方式</a></li>
+                    <li><a href="about.html#address">公司地址</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h4>联系我们</h4>
+                <p><strong>邮箱</strong>genomics@outlook.com</p>
+                <p><strong>地址</strong>山东省青岛市高新区秀园路1号科创慧谷(青岛)科技园 D-2-264</p>
+                <p><strong>网址</strong>www.tongyuangene.com</p>
+            </div>
+        </div>
+                <div class="footer-bottom">
+            <span data-i18n="footer.copyright">版权所有 © 2026 同源基因</span>
+            <span class="footer-legal">
+                <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">鲁ICP备19022587号-2</a>
+            </span>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/docs-nav.js"></script>
+</body>
+</html>

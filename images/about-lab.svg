@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgAb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fef0f0"/>
+      <stop offset="100%" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="liqGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff6b6b"/>
+      <stop offset="100%" stop-color="#cc0000"/>
+    </linearGradient>
+    <linearGradient id="liqGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#80e0d0"/>
+      <stop offset="100%" stop-color="#00a896"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#bgAb)"/>
+
+  <!-- Lb -->
+  <rect x="0" y="340" width="600" height="20" fill="#8d6e63"/>
+  <rect x="0" y="360" width="600" height="90" fill="#a0826d" opacity="0.7"/>
+
+  <!-- %b�'	-->
+  <g transform="translate(120,340)">
+    <path d="M -40,-160 L -40,-100 L -70,-10 L 70,-10 L 40,-100 L 40,-160 Z"
+          fill="rgba(255,255,255,0.5)" stroke="#999" stroke-width="2"/>
+    <path d="M -60,-30 L 60,-30 L 50,-90 L -50,-90 Z" fill="url(#liqGrad)" opacity="0.85"/>
+    <rect x="-22" y="-170" width="44" height="14" rx="3" fill="#cc0000"/>
+    <text x="0" y="-60" text-anchor="middle" font-family="Arial" font-size="10" fill="white" font-weight="bold">NGS</text>
+  </g>
+
+  <!-- ա -->
+  <g transform="translate(240,340)">
+    <rect x="-12" y="-140" width="24" height="130" rx="0" fill="rgba(255,255,255,0.5)" stroke="#999" stroke-width="2"/>
+    <path d="M -12,-30 L 12,-30 L 12,-10 Q 12,0 0,0 Q -12,0 -12,-10 Z" fill="rgba(255,255,255,0.5)" stroke="#999" stroke-width="2"/>
+    <path d="M -10,-90 L 10,-90 L 10,-10 Q 10,0 0,0 Q -10,0 -10,-10 Z" fill="url(#liqGrad2)" opacity="0.85"/>
+    <circle cx="0" cy="-150" r="8" fill="#5a5a5a"/>
+  </g>
+
+  <!-- ա2 -->
+  <g transform="translate(290,340)">
+    <rect x="-12" y="-140" width="24" height="130" rx="0" fill="rgba(255,255,255,0.5)" stroke="#999" stroke-width="2"/>
+    <path d="M -12,-30 L 12,-30 L 12,-10 Q 12,0 0,0 Q -12,0 -12,-10 Z" fill="rgba(255,255,255,0.5)" stroke="#999" stroke-width="2"/>
+    <path d="M -10,-110 L 10,-110 L 10,-10 Q 10,0 0,0 Q -10,0 -10,-10 Z" fill="url(#liqGrad)" opacity="0.85"/>
+    <circle cx="0" cy="-150" r="8" fill="#5a5a5a"/>
+  </g>
+
+  <!-- ա3 -->
+  <g transform="translate(340,340)">
+    <rect x="-12" y="-140" width="24" height="130" rx="0" fill="rgba(255,255,255,0.5)" stroke="#999" stroke-width="2"/>
+    <path d="M -12,-30 L 12,-30 L 12,-10 Q 12,0 0,0 Q -12,0 -12,-10 Z" fill="rgba(255,255,255,0.5)" stroke="#999" stroke-width="2"/>
+    <path d="M -10,-70 L 10,-70 L 10,-10 Q 10,0 0,0 Q -10,0 -10,-10 Z" fill="url(#liqGrad2)" opacity="0.85"/>
+    <circle cx="0" cy="-150" r="8" fill="#5a5a5a"/>
+  </g>
+
+  <!-- >�\ -->
+  <g transform="translate(470,340)">
+    <ellipse cx="0" cy="0" rx="55" ry="10" fill="#2a2a2a"/>
+    <rect x="-15" y="-90" width="30" height="80" fill="#333"/>
+    <rect x="-30" y="-100" width="60" height="14" rx="3" fill="#444"/>
+    <rect x="-8" y="-110" width="16" height="14" fill="#555"/>
+    <rect x="-25" y="-150" width="50" height="36" rx="6" fill="#cc0000"/>
+    <circle cx="0" cy="-130" r="14" fill="#1a1a1a"/>
+    <circle cx="0" cy="-130" r="8" fill="#444"/>
+    <!-- ��\ -->
+    <rect x="-6" y="-180" width="12" height="30" fill="#333"/>
+    <rect x="-12" y="-184" width="24" height="6" rx="2" fill="#1a1a1a"/>
+  </g>
+
+  <!-- �o�� -->
+  <g opacity="0.08">
+    <text x="40" y="50" font-family="Arial" font-size="60" font-weight="bold" fill="#cc0000">DNA</text>
+    <text x="350" y="80" font-family="Arial" font-size="20" fill="#cc0000">R� � QINGDAO</text>
+    <text x="450" y="120" font-family="Arial" font-size="14" fill="#cc0000">Since 2015</text>
+  </g>
+
+  <!-- wj�:R� -->
+  <g opacity="0.15" fill="none" stroke="#0066cc" stroke-width="2">
+    <path d="M 0,150 Q 50,140 100,150 T 200,150 T 300,150 T 400,150 T 500,150 T 600,150"/>
+    <path d="M 0,170 Q 50,160 100,170 T 200,170 T 300,170 T 400,170 T 500,170 T 600,170"/>
+  </g>
+</svg>

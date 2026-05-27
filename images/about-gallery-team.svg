@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="teamBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff5f5"/>
+      <stop offset="100%" stop-color="#fde0e0"/>
+    </linearGradient>
+    <linearGradient id="card1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fafafa"/>
+    </linearGradient>
+    <linearGradient id="avatarRed" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff6b6b"/>
+      <stop offset="100%" stop-color="#cc0000"/>
+    </linearGradient>
+    <linearGradient id="avatarBlue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5b9eff"/>
+      <stop offset="100%" stop-color="#0044aa"/>
+    </linearGradient>
+    <linearGradient id="avatarOrange" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffb84d"/>
+      <stop offset="100%" stop-color="#cc6600"/>
+    </linearGradient>
+    <linearGradient id="avatarGreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5dd39e"/>
+      <stop offset="100%" stop-color="#1a7a4d"/>
+    </linearGradient>
+    <filter id="tShadow"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(50,0,0,0.15)"/></filter>
+  </defs>
+
+  <rect width="600" height="600" fill="url(#teamBg)"/>
+  <circle cx="80" cy="80" r="120" fill="rgba(204,0,0,0.05)"/>
+  <circle cx="520" cy="520" r="160" fill="rgba(204,0,0,0.05)"/>
+
+  <g filter="url(#tShadow)" transform="translate(80,80)">
+    <rect width="200" height="240" rx="14" fill="url(#card1)"/>
+    <circle cx="100" cy="80" r="40" fill="url(#avatarRed)"/>
+    <path d="M60,140 Q100,110 140,140 L140,160 L60,160 Z" fill="url(#avatarRed)"/>
+    <rect x="40" y="180" width="120" height="8" rx="4" fill="#1a1a1a"/>
+    <rect x="60" y="196" width="80" height="6" rx="3" fill="#cccccc"/>
+    <rect x="50" y="216" width="100" height="14" rx="7" fill="rgba(204,0,0,0.12)"/>
+    <text x="100" y="226" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#cc0000" font-weight="bold">CEO &amp; FOUNDER</text>
+  </g>
+
+  <g filter="url(#tShadow)" transform="translate(320,80)">
+    <rect width="200" height="240" rx="14" fill="url(#card1)"/>
+    <circle cx="100" cy="80" r="40" fill="url(#avatarBlue)"/>
+    <path d="M60,140 Q100,110 140,140 L140,160 L60,160 Z" fill="url(#avatarBlue)"/>
+    <rect x="40" y="180" width="120" height="8" rx="4" fill="#1a1a1a"/>
+    <rect x="60" y="196" width="80" height="6" rx="3" fill="#cccccc"/>
+    <rect x="50" y="216" width="100" height="14" rx="7" fill="rgba(0,68,170,0.12)"/>
+    <text x="100" y="226" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#0044aa" font-weight="bold">BIOINFORMATICS</text>
+  </g>
+
+  <g filter="url(#tShadow)" transform="translate(80,340)">
+    <rect width="200" height="200" rx="14" fill="url(#card1)"/>
+    <circle cx="100" cy="64" r="32" fill="url(#avatarOrange)"/>
+    <path d="M70,112 Q100,90 130,112 L130,130 L70,130 Z" fill="url(#avatarOrange)"/>
+    <rect x="40" y="150" width="120" height="6" rx="3" fill="#1a1a1a"/>
+    <rect x="60" y="164" width="80" height="5" rx="2" fill="#cccccc"/>
+    <rect x="50" y="180" width="100" height="12" rx="6" fill="rgba(204,102,0,0.12)"/>
+    <text x="100" y="189" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#cc6600" font-weight="bold">CLOUD ENGINEER</text>
+  </g>
+
+  <g filter="url(#tShadow)" transform="translate(320,340)">
+    <rect width="200" height="200" rx="14" fill="url(#card1)"/>
+    <circle cx="100" cy="64" r="32" fill="url(#avatarGreen)"/>
+    <path d="M70,112 Q100,90 130,112 L130,130 L70,130 Z" fill="url(#avatarGreen)"/>
+    <rect x="40" y="150" width="120" height="6" rx="3" fill="#1a1a1a"/>
+    <rect x="60" y="164" width="80" height="5" rx="2" fill="#cccccc"/>
+    <rect x="50" y="180" width="100" height="12" rx="6" fill="rgba(26,122,77,0.12)"/>
+    <text x="100" y="189" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#1a7a4d" font-weight="bold">SUPPORT TEAM</text>
+  </g>
+
+  <g stroke="#cc0000" stroke-width="2" fill="none" stroke-dasharray="4,4" opacity="0.4">
+    <line x1="280" y1="200" x2="320" y2="200"/>
+    <line x1="280" y1="440" x2="320" y2="440"/>
+    <line x1="180" y1="320" x2="180" y2="340"/>
+    <line x1="420" y1="320" x2="420" y2="340"/>
+  </g>
+</svg>
