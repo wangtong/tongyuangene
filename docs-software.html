@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<script>(function(){var t=localStorage.getItem('ty-theme')||'light';document.documentElement.setAttribute('data-theme',t);})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>管理生物软件 | 技术文档</title>
+<meta name="description" content="基因学苑生物云平台使用说明（2026版）">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23cc0000'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-size='18' font-weight='bold' fill='white'%3E同%3C/text%3E%3C/svg%3E">
+</head>
+<body data-page="docs">
+<header class="header">
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon" aria-hidden="true"><svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><g transform="rotate(135 22 22)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"><path d="M8 16 C 16 10 28 10 36 16"/><path d="M8 28 C 16 34 28 34 36 28" opacity="0.7"/><path d="M14 18 L18 26"/><path d="M22 16 L22 28" opacity="0.8"/><path d="M30 18 L26 26"/></g></svg></span>
+            <span class="logo-text">
+                <span class="logo-name">青岛同源基因</span>
+                <span class="logo-en">TONGYUAN GENE</span>
+            </span>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="cloud.html">生物云计算</a></li>
+            <li><a href="video.html">生物信息视频课程</a></li>
+            <li><a href="ai.html">AI+生物信息</a></li>
+            <li><a href="docs.html" class="active">技术文档</a></li>
+            <li><a href="about.html">关于我们</a></li>
+        </ul>
+        <div class="nav-actions">
+            <div class="nav-toolbar">
+                <button type="button" class="toolbar-btn" id="theme-toggle" aria-label="切换到暗色模式" title="暗色模式">
+                    <span class="theme-icon-light" aria-hidden="true">☀️</span>
+                    <span class="theme-icon-dark" aria-hidden="true">🌙</span>
+                </button>
+            </div>
+            <a href="about.html" class="btn btn-primary">联系我们</a>
+        </div>
+        <button class="nav-toggle" aria-label="切换导航">☰</button>
+    </nav>
+</header>
+<section class="subhero subhero-compact">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">首页</a> / <a href="docs.html">技术文档</a> / <span>管理生物软件</span>
+        </div>
+        <h1>基因学苑生物云平台使用说明</h1>
+        <p>2026 版 · 从登录、传文件到软件环境与 AI 工具</p>
+    </div>
+</section>
+<section class="section section-docs">
+    <div class="container">
+        <div class="docs-layout docs-layout-3">
+            <aside class="docs-sidebar" aria-label="文档章节">
+                <h4 class="docs-sidebar-heading"><a href="docs.html">一、文档目录</a></h4>
+                <nav>
+                    <ul class="docs-sidebar-list">
+<li><a href="docs-login.html">二、如何登录</a></li>
+<li><a href="docs-software.html" class="is-active">三、管理生物软件</a></li>
+<li><a href="docs-container.html">四、使用容器管理生物软件</a></li>
+<li><a href="docs-database.html">五、生物数据库目录</a></li>
+<li><a href="docs-positron.html">六、通过 Positron 使用 R 和 Python</a></li>
+<li><a href="docs-rstudio.html">七、Rstudio 环境使用</a></li>
+<li><a href="docs-tmux.html">八、Tmux 不间断会话</a></li>
+<li><a href="docs-ai-tools.html">九、使用 AI 功能</a></li>
+<li><a href="docs-vscode.html">十、安装和使用 VSCode</a></li>
+<li><a href="docs-faq-cloud.html">十一、常见问题</a></li>
+<li><a href="docs-skills.html">十二、生物信息技能</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <div class="docs-content">
+                <div class="content-block doc-page">
+                    <h2 class="doc-page-title">三、管理生物软件</h2>
+<p>我们的云服务器里内置大量软件。软件主要分为三大类：</p>
+<p>第一是共享软件，第二是本机软件，第三是个人安装的软件。</p>
+<h3 id="1-共享软件">1 共享软件</h3>
+<p>共享软件是公共目录下，由管理员负责维护，是服务器主要软件目录，但共享软件目录用户只能使用，而不能修改，也就是不能使用conda或者mamba来安装。</p>
+<pre class="code-block doc-code doc-code-bash"><code>#1 编译安装软件
+/ifs1/Software/bin/
+
+#2 bioconda安装软件目录
+/ifs1/Software/miniforge3/bin/
+
+#3 bioconda虚拟环境
+/ifs1/Software/miniforge3/envs/</code></pre>
+<p>使用共享目录下下的软件，直接敲软件名即可。也可以先使用which或者whereis命令来查找。</p>
+<pre class="code-block doc-code doc-code-bash"><code>`# 查找软件`
+`which` bwa
+
+# 使用全路径运行
+/ifs1/Software/miniforge3/bin/bwa </code></pre>
+<p>如果要使用虚拟环境中的软件，首先需要激活虚拟环境，例如使用kraken2进行物种分类</p>
+<pre class="code-block doc-code doc-code-bash"><code>#激活虚拟环境
+mamba activate /ifs1/Software/miniforge3/envs/kraken2
+#查看软件列表
+mamba list</code></pre>
+<h3 id="2-利用bioconda管理生物软件">2 利用bioconda管理生物软件</h3>
+<p>强烈建议自己安装bioconda，这样不仅可以激活管理员的虚拟环境，并且可以很方便的自己安装软件。</p>
+<p>1、首先下载bioconda，这里选择miniforge3版本</p>
+<pre class="code-block doc-code doc-code-bash"><code>#1 下载miniforge3
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
+
+#2 安装miniforge3
+sh Miniforge3-Linux-x86_64.sh -b -c
+
+#3 重新登录或者运行下面命令刷新设置
+source ~/.bashrc
+
+#4 添加软件源
+conda config --add channels bioconda</code></pre>
+<p>表1 <strong>bioconda常用选项参数</strong></p>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>info</th><th>显示某个软件信息</th></tr></thead><tbody><tr><td>help</td><td>给出帮助信息</td></tr><tr><td>list</td><td>查看所有安装的软件</td></tr><tr><td>search</td><td>查找安装的软件</td></tr><tr><td>create</td><td>创建一个新的conda环境</td></tr><tr><td>install</td><td>安装需要的软件</td></tr><tr><td>update</td><td>对软件进行升级</td></tr><tr><td>upgrade</td><td>与update相同</td></tr><tr><td>remove</td><td>卸载已经安装的软件</td></tr><tr><td>uninstall</td><td>与remove相同</td></tr><tr><td>config</td><td>配置软件源</td></tr><tr><td>clean</td><td>移除没用的软件安装包和缓冲</td></tr><tr><td>package</td><td>低配版软件工具，还在实验中</td></tr></tbody></table></div>
+<p>下面列出一些常用软件的安装，其他软件请查看对应文档，也可以打开mamba.sh安装自己需要的软件。这些软件都会安装在个人目录下的miniforge3目录中。</p>
+<pre class="code-block doc-code doc-code-bash"><code>#利用mamba安装软件
+mamba install -y bwa 
+mamba install -y samtools
+mamba install -y bcftools
+mamba install -y blast 
+mamba install -y blat 
+mamba install -y mummer 
+mamba install -y mafft 
+mamba install -y muscle 
+mamba install -y lastz
+mamba install -y sratools
+mamba install -y seqkit
+mamba install -y seqtk
+mamba install -y bedtools
+mamba install -y bedops
+mamba install -y gfatools
+mamba install -y circos
+mamba install -y entrez-direct
+mamba install -y emboss
+ 
+#安装数据质控软件
+mamba install -y fastqc multiqc 
+mamba install -y trimmomatic
+mamba install -y fastp
+mamba create -n nanoplot -y nanoplot
+ 
+#安装基因组拼接相关工具
+mamba install -y velvet
+mamba install -y flye
+mamba install -y miniasm
+mamba install -y canu
+mamba install -y megahit
+mamba install -y spades
+mamba install -y quast
+mamba install -y racon
+mamba install -y miniasm
+mamba install -y nanopolish
+ 
+#安装基因功能分析软件
+mamba install -y prodigal
+mamba install -y glimmer
+mamba install -y augustus
+mamba install -y trf</code></pre>
+<h3 id="3-升级bioconda">3 升级bioconda</h3>
+<p>bioconda在使用一段时间之后需要升级，否则低版本会发生一些安装错误，使用最新版本会大大减少报错的几率。下面两种方法可以完成升级。</p>
+<p><strong>方法一：conda自己升级</strong></p>
+<pre class="code-block doc-code doc-code-bash"><code># 运行下面代码进行升级
+conda update -n base -c conda-forge -y conda</code></pre>
+<p><strong>方法二：通过安装升级</strong></p>
+<p>下面的方法可以无缝进行升级，快速，简单，安全。例如目前版本安装目录为 /ifs1/User/wangtong/miniforge3/</p>
+<pre class="code-block doc-code doc-code-bash"><code>#1 下载最新版本miniforge3
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
+
+#2 升级miniforge3
+sh Miniforge3-Linux-x86_64.sh -b -u -p /ifs1/User/wangtong/miniforge3/</code></pre>
+<p>其中-p后面接的是原bioconda安装目录，需要给全路径。</p>
+<h3 id="4-不同环境切换">4 不同环境切换</h3>
+<p>默认开通账号之后给定的管理员安装的bioconda，用户可以使用里面大量的软件。但由于Linux系统权限的问题，用户无法使用这个conda来安装软件。当自己安装bioconda之后，则有权限安装软件。</p>
+<p>首先确认默认的bioconda的权限，是自己安装的还是管理员安装的。</p>
+<p>如果想要进行切换，只需修改默认的.bashrc配置文件即可。</p>
+<p>目前系统中有很多管理员安装的bioconda，并记录下文件路径。里面base是基础环境，然后下面一些为虚拟环境。</p>
+<pre class="code-block doc-code doc-code-bash"><code># 查看管理员安装虚拟环境软件
+mamba env list
+base                     /share/Software/miniforge3
+16s                      /share/Software/miniforge3/envs/16s
+R                        /share/Software/miniforge3/envs/R
+busco                    /share/Software/miniforge3/envs/busco
+eggnog-mapper            /share/Software/miniforge3/envs/eggnog-mapper
+genome                   /share/Software/miniforge3/envs/genome
+kraken2                  /share/Software/miniforge3/envs/kraken2
+medaka                   /share/Software/miniforge3/envs/medaka
+meta                     /share/Software/miniforge3/envs/meta
+nanoplot                 /share/Software/miniforge3/envs/nanoplot
+prokka                   /share/Software/miniforge3/envs/prokka
+python                   /share/Software/miniforge3/envs/python
+qiime2-2023.7            /share/Software/miniforge3/envs/qiime2-2023.7
+qiime2-amplicon-2024.2     /share/Software/miniforge3/envs/qiime2-amplicon-2024.2
+qiime2-tiny-2024.2       /share/Software/miniforge3/envs/qiime2-tiny-2024.2
+quast                    /share/Software/miniforge3/envs/quast
+rnaseq                   /share/Software/miniforge3/envs/rnaseq
+unicycler                /share/Software/miniforge3/envs/unicycler</code></pre>
+<h3 id="5-使用管理员安装的bioconda">5 使用管理员安装的bioconda</h3>
+<p>默认管理员安装的bioconda只有读权限，也就是只能使用软件，不能安装软件。如果安装则会出现Permission denied 的报错。</p>
+<p>如果想使用管理安装的bioconda安装软件，则需要进行一些设置，并且该方法不能将软件安装到base环境，只能先创建虚拟环境，然后安装软件。</p>
+<pre class="code-block doc-code doc-code-bash"><code># 激活管理员bioconda
+source /share/Software/miniforge3/bin/activate
+# 初始化你自己的 Shell
+conda init bash
+# 刷新设置
+source ~/.bashrc
+
+# 配置 Conda 路径（关键步骤）
+# 设置你的虚拟环境存储路径
+conda config --add envs_dirs ~/.conda/envs
+# 设置你的安装包缓存路径
+conda config --add pkgs_dirs ~/.conda/pkgs
+# 查看目录
+conda config --show envs_dirs
+
+# 添加软件源
+conda config --add channels bioconda 
+conda config --add channels conda-forge
+
+# 创建环境安装软件
+conda create -n iseq -y iseq</code></pre>
+                </div>
+            </div>
+            <aside class="doc-toc" aria-label="本页目录">
+                <h4>本页目录</h4>
+                <nav>
+                    <ul class="doc-toc-main">
+<li><a href="#1-共享软件">1 共享软件</a></li>
+<li><a href="#2-利用bioconda管理生物软件">2 利用bioconda管理生物软件</a></li>
+<li><a href="#3-升级bioconda">3 升级bioconda</a></li>
+<li><a href="#4-不同环境切换">4 不同环境切换</a></li>
+<li><a href="#5-使用管理员安装的bioconda">5 使用管理员安装的bioconda</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="logo-icon" aria-hidden="true"><svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><g transform="rotate(135 22 22)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"><path d="M8 16 C 16 10 28 10 36 16"/><path d="M8 28 C 16 34 28 34 36 28" opacity="0.7"/><path d="M14 18 L18 26"/><path d="M22 16 L22 28" opacity="0.8"/><path d="M30 18 L26 26"/></g></svg></span>
+                    <span>青岛同源基因</span>
+                </div>
+                <p>因为专注，所以专业。<br>专注新一代测序技术服务，<br>让生物数据分析触手可及。</p>
+            </div>
+            <div class="footer-col">
+                <h4>产品</h4>
+                <ul>
+                    <li><a href="cloud.html">生物云计算</a></li>
+                    <li><a href="video.html">视频课程</a></li>
+                    <li><a href="ai.html">AI+生物信息</a></li>
+                    <li><a href="docs.html">技术文档</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>资源</h4>
+                <ul>
+                    <li><a href="docs-login.html">云平台使用说明</a></li>
+                    <li><a href="cloud.html">服务器价格</a></li>
+                    <li><a href="video.html">试看视频</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>公司</h4>
+                <ul>
+                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="about.html#contact">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h4>联系我们</h4>
+                <p><strong>邮箱</strong>genomics@outlook.com</p>
+                <p><strong>地址</strong>山东省青岛市高新区秀园路1号科创慧谷(青岛)科技园 D-2-264</p>
+                <p><strong>网址</strong>www.tongyuangene.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>版权所有 © 2026 同源基因</span>
+            <span class="footer-legal">
+                <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">鲁ICP备19022587号-2</a>
+            </span>
+        </div>
+    </div>
+</footer>
+<script src="js/main.js"></script>
+<script src="js/docs-nav.js"></script>
+</body>
+</html>

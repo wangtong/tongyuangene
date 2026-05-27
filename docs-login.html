@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<script>(function(){var t=localStorage.getItem('ty-theme')||'light';document.documentElement.setAttribute('data-theme',t);})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>如何登录 | 技术文档</title>
+<meta name="description" content="基因学苑生物云平台使用说明（2026版）">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23cc0000'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-size='18' font-weight='bold' fill='white'%3E同%3C/text%3E%3C/svg%3E">
+</head>
+<body data-page="docs">
+<header class="header">
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon" aria-hidden="true"><svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><g transform="rotate(135 22 22)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"><path d="M8 16 C 16 10 28 10 36 16"/><path d="M8 28 C 16 34 28 34 36 28" opacity="0.7"/><path d="M14 18 L18 26"/><path d="M22 16 L22 28" opacity="0.8"/><path d="M30 18 L26 26"/></g></svg></span>
+            <span class="logo-text">
+                <span class="logo-name">青岛同源基因</span>
+                <span class="logo-en">TONGYUAN GENE</span>
+            </span>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="cloud.html">生物云计算</a></li>
+            <li><a href="video.html">生物信息视频课程</a></li>
+            <li><a href="ai.html">AI+生物信息</a></li>
+            <li><a href="docs.html" class="active">技术文档</a></li>
+            <li><a href="about.html">关于我们</a></li>
+        </ul>
+        <div class="nav-actions">
+            <div class="nav-toolbar">
+                <button type="button" class="toolbar-btn" id="theme-toggle" aria-label="切换到暗色模式" title="暗色模式">
+                    <span class="theme-icon-light" aria-hidden="true">☀️</span>
+                    <span class="theme-icon-dark" aria-hidden="true">🌙</span>
+                </button>
+            </div>
+            <a href="about.html" class="btn btn-primary">联系我们</a>
+        </div>
+        <button class="nav-toggle" aria-label="切换导航">☰</button>
+    </nav>
+</header>
+<section class="subhero subhero-compact">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">首页</a> / <a href="docs.html">技术文档</a> / <span>如何登录</span>
+        </div>
+        <h1>基因学苑生物云平台使用说明</h1>
+        <p>2026 版 · 从登录、传文件到软件环境与 AI 工具</p>
+    </div>
+</section>
+<section class="section section-docs">
+    <div class="container">
+        <div class="docs-layout docs-layout-3">
+            <aside class="docs-sidebar" aria-label="文档章节">
+                <h4 class="docs-sidebar-heading"><a href="docs.html">一、文档目录</a></h4>
+                <nav>
+                    <ul class="docs-sidebar-list">
+<li><a href="docs-login.html" class="is-active">二、如何登录</a></li>
+<li><a href="docs-software.html">三、管理生物软件</a></li>
+<li><a href="docs-container.html">四、使用容器管理生物软件</a></li>
+<li><a href="docs-database.html">五、生物数据库目录</a></li>
+<li><a href="docs-positron.html">六、通过 Positron 使用 R 和 Python</a></li>
+<li><a href="docs-rstudio.html">七、Rstudio 环境使用</a></li>
+<li><a href="docs-tmux.html">八、Tmux 不间断会话</a></li>
+<li><a href="docs-ai-tools.html">九、使用 AI 功能</a></li>
+<li><a href="docs-vscode.html">十、安装和使用 VSCode</a></li>
+<li><a href="docs-faq-cloud.html">十一、常见问题</a></li>
+<li><a href="docs-skills.html">十二、生物信息技能</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <div class="docs-content">
+                <div class="content-block doc-page">
+                    <h2 class="doc-page-title">二、如何登录</h2>
+<p>根据邮箱中给定的IP地址，账户，密码，端口号进行登录。SSH默认端口号为22，默认端口很容易受到网络攻击，因此，我们采用端口转发的方式，每台设备采用不同的端口，根据邮箱内给定的端口号进行填写。例如SSH端口号为40006，网页端则为410006，以此类推。具体请参照邮箱中账号密码部分。</p>
+<p>邮件中的<strong>IP地址，端口号，用户名和密码</strong>四部分是登录服务器需要的部分。</p>
+<pre class="code-block doc-code doc-code-bash"><code>截止日期：**2026年12月12日**
+**IP地址****：a5.tongyuangene.com**
+**端口号：****10005**
+**用户名****：lixxxx**
+**密码：**xxxxxxx**  ****(**区分大小写，登陆后可以修改密码）。
+网页端R: [http://a5.tongyuangene.com:11005/auth-sign-in?appUri=%2F](http://a5.tongyuangene.com:11005/auth-sign-in?appUri=%2F)  
+
+请一定要观看附件说明文档，在邮件附件。
+**使用文档**: [**https://ai.feishu.cn/wiki/DLQfwk5cdiYHMbkTB9kczLDPn4g**](https://ai.feishu.cn/wiki/DLQfwk5cdiYHMbkTB9kczLDPn4g) </code></pre>
+<h3 id="1-选择合适的工具">1 选择合适的工具</h3>
+<p>使用服务器需要使用ssh登录以及sftp传输文件，支持这两项功能的工具有很多。有收费也有免费，这里我们给大家列出一些，根据个人使用习惯来进行选择。这里面我们推荐windows用户选择xshell+xftp或者termius，mac用户选择termius。</p>
+<p><strong>windows系统：</strong></p>
+<p>xshell+xftp：<a href="https://www.xshell.com/zh/free-for-home-school/" rel="noopener noreferrer">https://www.xshell.com/zh/free-for-home-school/</a></p>
+<p>putty：<a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/" rel="noopener noreferrer">https://www.chiark.greenend.org.uk/\~sgtatham/putty/</a></p>
+<p>SSH Secure Shell Client：<a href="https://www.ssh.com/ssh/" rel="noopener noreferrer">https://www.ssh.com/ssh/</a></p>
+<p>secureCRT：<a href="https://www.vandyke.com/products/securecrt/" rel="noopener noreferrer">https://www.vandyke.com/products/securecrt/</a></p>
+<p>termius：<a href="https://www.termius.com" rel="noopener noreferrer">https://www.termius.com</a></p>
+<p>mobaxterm：<a href="https://mobaxterm.mobatek.net/download.html" rel="noopener noreferrer">https://mobaxterm.mobatek.net/download.html</a></p>
+<p><strong>macos系统：</strong></p>
+<p>termius：<a href="https://www.termius.com" rel="noopener noreferrer">https://www.termius.com</a></p>
+<p>secureCRT：<a href="https://www.vandyke.com/products/securecrt/" rel="noopener noreferrer">https://www.vandyke.com/products/securecrt/</a></p>
+<p>Royal：<a href="https://www.royalapps.com/ts/mac/features" rel="noopener noreferrer">https://www.royalapps.com/ts/mac/features</a></p>
+<p>tabby：<a href="https://tabby.sh/" rel="noopener noreferrer">https://tabby.sh/</a></p>
+<h3 id="2-如何登录服务器">2 如何登录服务器</h3>
+<p>为了保持windows系统与macos系统一致性，这里推荐使用termius工具。Termius是一款支持SSH与Telnet协议的连接工具，支持windows系统，macos，Linux，iOS以及Android等几乎支持主流平台。且内置sftp，使用一个工具即可同时登录服务器和传输文件。</p>
+<p>目前macos系统从AppStore下载的termius无法读取本地文件，因此强烈推荐从官网下载进行安装。</p>
+<p>windows用户也可以免费申请xshell+xftp工具：</p>
+<p><a href="https://www.xshell.com/zh/free-for-home-school/" rel="noopener noreferrer">https://www.xshell.com/zh/free-for-home-school/</a></p>
+<h4 id="2-1-termius使用">2.1 termius使用</h4>
+<p>windows版本下载地址：<a href="https://www.termius.com/windows" rel="noopener noreferrer">https://www.termius.com/windows</a></p>
+<p>macos版本下载地址：<a href="https://termius.com/mac-os" rel="noopener noreferrer">https://termius.com/mac-os</a></p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MTRjZjBkZGMzYzI4MGNlODQ0NTliYTQ3NTVhMWVhOWFfMGQzN2E4OTZiMzIwMzQ5ZDFjNTUwOTA3NWE3ZmQ2NjZfSUQ6NzU3NzI5NDc2MzU4ODExMTMyMl8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p><strong>Termius是付费软件，提供免费版本，需要注册登录使用。普通用户选择Free版本即可，可以一直使用，默认会有14天Pro级别使用，到期后选择降级到Starter版本即可。</strong></p>
+<p>1、双击打开termius</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=M2JjNzE4MTFmYjhiNzVjN2EwODViOWMwNDU1NGVkNDlfMWIwZjYwZTE5MzY4NjhjNmFkM2FmMTgxNTVjNTMzM2ZfSUQ6NzU3NzI5NjcwNjkwMDAzNjc4OF8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>2、注册登录账号</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NDNlYjJhN2ViNzk3ZTA3OWM3NTM0YmM3ODRkYzFhZWJfZDlkMGYyZTllYjc4MjA5ZDViMTY5ZGE0Zjk4MGU2YWJfSUQ6NzU3NzI5NjgwODIxNzc3NTMxMV8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>3、如果之前使用过，会有提示需要购买，选择图中的Starter，如果第一次注册使用，可忽略</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=Y2E0MjJhNjc1MDJkZmU4YzdiNTEyODE0ZDQ2ZTYzMTJfZTIyM2YzZTc4NTllNGI4YmZlYTM4NTk1ZDgwMDcwNThfSUQ6NzU3NzI5NzEyODk0MDcwMjY4Ml8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>4、再次确认降级到Starter模式</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MDBjYmFmODBkOWNmMDA5NjBiZWRmZjZjOTcwZmJlYzFfNDE1OGEyNDJmODBmNWFmNDY3N2NkMWZkYTg4MjQyODBfSUQ6NzU3NzI5NzUxNjk2MjU0ODY5Nl8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>5、输入IP地址，端口号，账户以及密码，标签General部分可以随意填写</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MDFkYWYyNDcwNGEzNjIxZGZmOTMwOGEyYzIwOTZmZWZfMWRmZWNmMTEyYTk3YThiMDEwOTI0YmViZWMyOGIyZmVfSUQ6NzU3NzI5Nzk5NzQzNzE3NzA2MF8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>5、选择追加和继续，这样就可以自动保存密码</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NzJiZWE4ZTZiYjQyNWJiZWRkODY1YWE4ZTQ4NTU5MjdfOGQxOTU0MDYwMWIxY2JhZTE4MmM5ODZkOGYxYTNjY2JfSUQ6NzU3NzI5ODE4NjcyMjA1MzA3NV8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>6、如果没有网络以及账号信息没有错误，就可以登录了。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MWIyOTA4OTkxNDM2YTA4YjUxOTFhYmJlYzYxMWQ4MDVfYzg3MjU3NDVlMzVhZGJhOWIyZTBmYzI4NzI0OTQ5YWZfSUQ6NzU3NzI5ODI4ODE5MTM0MzU4Ml8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>7、默认黑色主题，可以进行调整</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=OTZiOWJhZWVlNDIxZjg0Mzg5YjQ4Yzg1Y2RlZmUxN2FfNjA4ODBhMjk3YWMzZjU4MTViM2VlMzM2NzZiYmJhNTRfSUQ6NzU3NzI5ODM3MDA2NDcxNDcxNl8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>8、默认新用户有14天Pro版本试用，到期后可以选择降级到Starter版本。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=Njg4M2RjZDFjMjNjOWMzY2RlYzQxNjNlYzQzMjJkOWFfZDIyM2ZlNGUzY2I0OTRkOGI2ZDEyZjJmZDM3MmY3MGRfSUQ6NzU3NzI5MjA0OTc1MDQ5NDE1MV8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<h4 id="2-2-termius设置">2.2 termius设置</h4>
+<p>termius的设置主要包括字体，字号，主题，鼠标右键粘贴等内容。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZjQyODNkMTBkMWUxYWNiM2VjODNiNjMyNmU5M2Q0YWFfNDQ4YjgxM2E3MjNjNjJhMjZmNzZmOGE2MzJkODBjMTZfSUQ6NzU3NzMwMDE4Mjk1MDYxMTkyM18xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZTQ5YTVmODI0OTBmY2ZkNTc1M2VjZjQyNzJiZWI0MGVfYjEwNWI2NDBhZmI3YjlkMDljYTNkMDk2ZmQ3YmU3NDhfSUQ6NzU3NzMwMDM4NzEyNTc1OTE2Nl8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>图 12 设置字体字号</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZmUxYTE1MzM1ZWVlMmRiOGUxM2ZkNjNhMTI2ZTU2MzFfZWQwNDM3NDI1ZDBkYmM3MTJiYjlmNzE0YWM1Zjc5MjlfSUQ6NzU3NzMwMDYzNDQyNTQxMjU1OV8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MTIwNjkyZTg4YWJmMzQzNDkxNWJiMTFhZWY4YjRhNWNfNzQwNjAyMzM0YWNlNGVkNDYzMWIzODIzNGEwMmRjZDRfSUQ6NzU3NzMwMDg1NzEwOTQxNjkxNl8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<h3 id="3-传输文件">3 传输文件</h3>
+<p>通常的生物信息分析流程为将测序数据传输到服务器端进行分析，称为上载，得到结果之后传输到本地客户端，称为下载。能够进行服务器与客户端进行文件传输的工具有很多，包括xftp，Filezilla，winscp等。其中Termius和Filezilla都支持跨平台使用。</p>
+<h4 id="3-1-termius文件传输">3.1 Termius文件传输</h4>
+<p>termius自带的sftp功能可以进行文件传输。这里需要注意，macos系统termius必须从官网下载，从AppStore下载的termius不具备文件传输功能。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=YWY5MTNhY2UwN2U2M2I2Y2E4MmY2M2JjNWQ1OWQ4ZjRfYjI3MDFlZDI1ODU4MjA0MjgwOGQzZmJjZDZjMjFkNDFfSUQ6NzU3NzMwMzI2NjIwNTY5OTAwOV8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=YjAxNTZmMjVhZmU2NjBiZTQ1MTAwYjlmNzcwMTJkMzVfM2Q0MDYzZWM4Mjc3ZGE1NDI0YjUwOTE2M2RlNzcyNWNfSUQ6NzU3NzMwMzIyNjExMTE4NDA3MF8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<h4 id="3-2-filezilla文件传输">3.2 Filezilla文件传输</h4>
+<p>如果需使用termius，也可以单独使用Filezilla进行文件传输。Filezilla支持windows系统，macos以及Linux系统。</p>
+<p><strong>Filezilla下载地址：</strong></p>
+<p><a href="https://filezilla-project.org/" rel="noopener noreferrer">https://filezilla-project.org/</a></p>
+<p>在使用Filezilla登录时，IP地址前要加sftp://，例如IP地址要输入\&amp;#34;sftp://v5.tongyuangene.com\&amp;#34;，且端口号要写登录服务器端口号。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=YjA1YjYwOTE5MjNlMzc2OGQ1OGI5ZWQ0NTRiNzU0MDlfNTY5YWEwMWFkY2Y5OTM0OGRiNjZmNGEyZTFjMDk0ZjJfSUQ6NzU3NzMwMzE2NTEyNjYyNjI1OF8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<h4 id="3-3-命令行传输">3.3 命令行传输</h4>
+<p>无论是windows系统还是macos系统都自带命令行终端，例如windows系统有cmd和powershell。如果不使用下载工具，也可以直接在终端中使用命令，系统一般自带ssh，scp与sftp命令，输入IP地址，账号密码即可登录。</p>
+<p>ssh可以直接登录服务器，scp与sftp可以用于文件传输。scp是 secure copy的缩写, scp是linux系统下基于ssh登录进行安全的远程文件拷贝命令。scp命令可以跨服务器之间传输文件，同样需要给定IP地址，账户密码。</p>
+<p>本地ssh设置自动登录有很多好处，例如git，vscode，positron，pycharm等远程开发都要使用到ssh远程登录。</p>
+<p>1、windows系统打开终端命令行，通过ssh-keygen生产密钥对，将公钥上传至服务器。该公钥与登录vscode的一样。当然也可以设置不同的密钥对，实现对不同设备的登录。在windows终端中输入ssh-keygen命令。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MzJkNmYwZmU5NGMwNjAxYmZmNDBhODhlOTc0MGJkZGNfMWNkMThjMDM5NjE1N2E0YzQ0MTJkMWUzMmJkNGRiZjFfSUQ6NzU3NzMwOTk2MjQ3NDExNDI0OV8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=OTY1YzQ0OGExMTc0MGE1MGU4YzU2MTQ0Y2NlOTFmNjhfZThhZGYzZWViZTI1MTM5OWNmZjY5NmMwZTMwNWJhNjNfSUQ6NzU3NzMwOTc5MDYxMzYwNTMyNl8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=YWM4NjFhYWQ3ZWVmNzQ2NGNjNDNiYmU2NjdjYjMxN2RfOTk4YmJhZDE5YzQxYzcwZWYzMDBlN2M4YjgxYTlkYzhfSUQ6NzU3NzMxMDE1MjQyNTE2MzczMF8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>3、上传公钥到服务器</p>
+<p>macos自带ssh-copy-id命令，可以直接将密钥传到服务器端。windows可以安装使用git for windows，其中包含ssh-copy-id命令，该命令可以自动将ssh生成的密钥中的公钥，拷贝到服务器端，并更改名字为authorized_keys，非常的方便。使用该命令可以很方便地将密钥拷贝到服务器上。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=YWU0ODRjYzIzNmRjNzJmOWVhYzBhNGZlYjc1N2ZlYzdfN2ZiNDVlNWEzNjAwM2JkNjBlYWQ0NTk4MGViMzdiZGVfSUQ6NzU3NzMyMjAxODUzMDY5MjA0MV8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>如果没有ssh-copy-id，windows用户也可以使用下面的方法。</p>
+<pre class="code-block doc-code doc-code-plain-text"><code># windows命令
+ type C:\Users\wangtong\.ssh\id_ed25519.pub | ssh -p 10088 bioinfo@v5.tongyuangene.com &quot;cat &gt;&gt; .ssh/authorized_keys&quot;</code></pre>
+<p>配置成功之后就可以开始使用了。</p>
+<pre class="code-block doc-code doc-code-bash"><code>#scp上载文件
+scp -r data/ wangtong@v5.tongyuangene.com:~ 
+
+#scp下载文件
+scp -r wangtong@v5.tongyuangene.com:/ifs1/Software/data ./
+
+#使用sftp命令进行传输,get与put命令进行文件传输
+sftp wangtong@v5.tongyuangene.com</code></pre>
+<h3 id="4-跨服务器数据传输">4 跨服务器数据传输</h3>
+<p>如果用户数据在自己其他服务器，需要将数据迁移到我们服务器也可以通过服务器之间直接数据传输的方式。例如服务器A为用户现有服务器，用户名为test12，IP地址example.gene.wiki。新购买我们服务器为b2.tongyuangene.com，用户名为wangtong。</p>
+<p>可以选择rsync，scp或者sftp等方式来进行传输。由于不同服务器系统版本之间可能存在rsync版本差异，造成报错，这里推荐使用sftp命令。由于用户目前使用的服务器A可能设置了端口号，或者只能内网访问。这里将采用下面方法。</p>
+<ol>
+<li>登录客户自己服务器A。</li>
+</ol>
+<ol>
+<li>使用tmux新建一个不间断会话，便于服务器断开后不影响数据传输。</li>
+</ol>
+<ol>
+<li>使用sftp登录服务器b2.tongyuangene.com，当前数据目录为/home/test12，新服务器目录/ifs1/User/wangtong/</li>
+</ol>
+<pre class="code-block doc-code doc-code-bash"><code># 登录新服务器，输入新服务器密码
+sftp -P 30001 wangtong@b2.tongyuangene.com
+
+# 使用lcd 命令切换到本地要传数据目录，例如/home
+lcd /home
+
+# 使用cd目录，切换到新服务器数据目录
+cd /ifs1/User/wangtong/
+
+# 使用put -r命令传输数据
+put -r /test12</code></pre>
+<h3 id="5-内网数据传输">5 内网数据传输</h3>
+<p>如果购买我们的云服务器升级，例如从b1升级到c1，需要传输数据，我们可以使用内网传输，传输数据可以达到100MB/s。</p>
+<ol>
+<li>首先通过登录b1服务器，输入ip a命令，获取内网IP，一般172.16.xx或者192.168.xx开头的为内网IP。</li>
+</ol>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZGFmNWY1ZGU0YjkzZDhmMjVlOGNiMzdlMWY5NDNmNzJfMWY2YTlmYTdmYjUzNTU5M2M0MjlhOThjMzUwZWExMmNfSUQ6NzU3ODc3MjMyMDIxMTUzNjg1NV8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>也可以使用hostname -I获取</p>
+<ol>
+<li>登录c1服务器，首先使用tmux建立一个不间断会话。</li>
+</ol>
+<ol>
+<li>使用rsync，scp或者sftp命令进行数据传输，这里推荐使用rsync。例如用户名为wangtong，数据路径为/ifs1/User/wangtong/。</li>
+</ol>
+<pre class="code-block doc-code doc-code-bash"><code># 获取内网IP
+hostname -I
+# 使用sftp传输数据
+sftp wangtong@172.16.30.1
+# 使用rsync同步数据
+rsync -avP --rsh=ssh wangtong@172.16.30.1:/ifs1/User/wangtong/ /ifs1/User/wangtong/</code></pre>
+<p>输入b1服务器密码即可开始同步数据，rsync采用增量传输的方式，会跳过已经存在的内容，非常适合数据同步。采用该方法迁移后，数据分析环境保持不变。可以直接继续使用。</p>
+<h3 id="6-数据传输速率统计">6 数据传输速率统计</h3>
+<p>我们云服务器速率100Mbps国内带宽以及100Mbps国际网络。这里是小写的bps，是 bits per second 的简称。那么你的理论下载速度应该除以8，变成Bps，大写的Bps，即是Byte per second 的简称。理论最大值是12.5MB/s，如果使用无线连接，由于无线路由器和网卡性能的限制，实际下载速度会有损耗。所以，能够达到10MB/s，也还可以了。此外，还和下载资源具体的服务器带宽有关。</p>
+<p>有些用户经常问我为什么他的上传数据的速度比较慢，只有1M/s。这是因为传输数据同时受到两方面带宽的影响。就像一条传输数据的水管。虽然服务器端的管道有12米宽，但是你的只有1米宽，这样冲你那里留出的数据就受到限制，这是水桶效应，比如你是20M的网络，理论最大值只能达到2.5M/s，所以传输速度慢。另外，不同运营商或者教育网等也都会有影响。另外，有可能你还会发现，下载一个数据，家里网络下载很快，服务器里反而更慢了。这是因为家里宽带下行速率更大，例如500M，1000M，也就是下载速度更快。而在企业里1000M是非常昂贵的。</p>
+<p>可以使用一些在线测速的网站或者下载对应的软件。例如比较知名的speedtest.cn网站，国内也有很多。</p>
+<p>https://www.speedtest.cn</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=Yzg4MGUxODJjMWY4Y2FhYjVmNjljNjZlNDlhZjJiZDJfNzJjNmVjMGUzOTU5YWM0NmUyNzRkYmQ4YjVjZjJkOTZfSUQ6NzU3OTk1MjY5ODczMzI4NDMwOF8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>图中上传数据是56Mbps，除以8，理论最大值就是7M/s，实际还要更慢一些，如果能达到2-4M/s，属于正常现象。</p>
+                </div>
+            </div>
+            <aside class="doc-toc" aria-label="本页目录">
+                <h4>本页目录</h4>
+                <nav>
+                    <ul class="doc-toc-main">
+<li><a href="#1-选择合适的工具">1 选择合适的工具</a></li>
+<li><a href="#2-如何登录服务器">2 如何登录服务器</a></li>
+<li><ul class="doc-toc-sub">
+<li><a href="#2-1-termius使用">2.1 termius使用</a></li>
+<li><a href="#2-2-termius设置">2.2 termius设置</a></li>
+</ul></li>
+<li><a href="#3-传输文件">3 传输文件</a></li>
+<li><ul class="doc-toc-sub">
+<li><a href="#3-1-termius文件传输">3.1 Termius文件传输</a></li>
+<li><a href="#3-2-filezilla文件传输">3.2 Filezilla文件传输</a></li>
+<li><a href="#3-3-命令行传输">3.3 命令行传输</a></li>
+</ul></li>
+<li><a href="#4-跨服务器数据传输">4 跨服务器数据传输</a></li>
+<li><a href="#5-内网数据传输">5 内网数据传输</a></li>
+<li><a href="#6-数据传输速率统计">6 数据传输速率统计</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="logo-icon" aria-hidden="true"><svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><g transform="rotate(135 22 22)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"><path d="M8 16 C 16 10 28 10 36 16"/><path d="M8 28 C 16 34 28 34 36 28" opacity="0.7"/><path d="M14 18 L18 26"/><path d="M22 16 L22 28" opacity="0.8"/><path d="M30 18 L26 26"/></g></svg></span>
+                    <span>青岛同源基因</span>
+                </div>
+                <p>因为专注，所以专业。<br>专注新一代测序技术服务，<br>让生物数据分析触手可及。</p>
+            </div>
+            <div class="footer-col">
+                <h4>产品</h4>
+                <ul>
+                    <li><a href="cloud.html">生物云计算</a></li>
+                    <li><a href="video.html">视频课程</a></li>
+                    <li><a href="ai.html">AI+生物信息</a></li>
+                    <li><a href="docs.html">技术文档</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>资源</h4>
+                <ul>
+                    <li><a href="docs-login.html">云平台使用说明</a></li>
+                    <li><a href="cloud.html">服务器价格</a></li>
+                    <li><a href="video.html">试看视频</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>公司</h4>
+                <ul>
+                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="about.html#contact">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h4>联系我们</h4>
+                <p><strong>邮箱</strong>genomics@outlook.com</p>
+                <p><strong>地址</strong>山东省青岛市高新区秀园路1号科创慧谷(青岛)科技园 D-2-264</p>
+                <p><strong>网址</strong>www.tongyuangene.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>版权所有 © 2026 同源基因</span>
+            <span class="footer-legal">
+                <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">鲁ICP备19022587号-2</a>
+            </span>
+        </div>
+    </div>
+</footer>
+<script src="js/main.js"></script>
+<script src="js/docs-nav.js"></script>
+</body>
+</html>

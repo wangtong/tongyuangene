@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<script>(function(){var t=localStorage.getItem('ty-theme')||'light';document.documentElement.setAttribute('data-theme',t);})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>安装和使用 VSCode | 技术文档</title>
+<meta name="description" content="基因学苑生物云平台使用说明（2026版）">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23cc0000'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-size='18' font-weight='bold' fill='white'%3E同%3C/text%3E%3C/svg%3E">
+</head>
+<body data-page="docs">
+<header class="header">
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon" aria-hidden="true"><svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><g transform="rotate(135 22 22)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"><path d="M8 16 C 16 10 28 10 36 16"/><path d="M8 28 C 16 34 28 34 36 28" opacity="0.7"/><path d="M14 18 L18 26"/><path d="M22 16 L22 28" opacity="0.8"/><path d="M30 18 L26 26"/></g></svg></span>
+            <span class="logo-text">
+                <span class="logo-name">青岛同源基因</span>
+                <span class="logo-en">TONGYUAN GENE</span>
+            </span>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="cloud.html">生物云计算</a></li>
+            <li><a href="video.html">生物信息视频课程</a></li>
+            <li><a href="ai.html">AI+生物信息</a></li>
+            <li><a href="docs.html" class="active">技术文档</a></li>
+            <li><a href="about.html">关于我们</a></li>
+        </ul>
+        <div class="nav-actions">
+            <div class="nav-toolbar">
+                <button type="button" class="toolbar-btn" id="theme-toggle" aria-label="切换到暗色模式" title="暗色模式">
+                    <span class="theme-icon-light" aria-hidden="true">☀️</span>
+                    <span class="theme-icon-dark" aria-hidden="true">🌙</span>
+                </button>
+            </div>
+            <a href="about.html" class="btn btn-primary">联系我们</a>
+        </div>
+        <button class="nav-toggle" aria-label="切换导航">☰</button>
+    </nav>
+</header>
+<section class="subhero subhero-compact">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">首页</a> / <a href="docs.html">技术文档</a> / <span>安装和使用 VSCode</span>
+        </div>
+        <h1>基因学苑生物云平台使用说明</h1>
+        <p>2026 版 · 从登录、传文件到软件环境与 AI 工具</p>
+    </div>
+</section>
+<section class="section section-docs">
+    <div class="container">
+        <div class="docs-layout docs-layout-3">
+            <aside class="docs-sidebar" aria-label="文档章节">
+                <h4 class="docs-sidebar-heading"><a href="docs.html">一、文档目录</a></h4>
+                <nav>
+                    <ul class="docs-sidebar-list">
+<li><a href="docs-login.html">二、如何登录</a></li>
+<li><a href="docs-software.html">三、管理生物软件</a></li>
+<li><a href="docs-container.html">四、使用容器管理生物软件</a></li>
+<li><a href="docs-database.html">五、生物数据库目录</a></li>
+<li><a href="docs-positron.html">六、通过 Positron 使用 R 和 Python</a></li>
+<li><a href="docs-rstudio.html">七、Rstudio 环境使用</a></li>
+<li><a href="docs-tmux.html">八、Tmux 不间断会话</a></li>
+<li><a href="docs-ai-tools.html">九、使用 AI 功能</a></li>
+<li><a href="docs-vscode.html" class="is-active">十、安装和使用 VSCode</a></li>
+<li><a href="docs-faq-cloud.html">十一、常见问题</a></li>
+<li><a href="docs-skills.html">十二、生物信息技能</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <div class="docs-content">
+                <div class="content-block doc-page">
+                    <h2 class="doc-page-title">十、安装和使用vscode</h2>
+<p>vscode是一款文本编辑器，是高级版本的记事本，通过vscode可以配置和运行各种语言，例如常用的python，R，c，c++等都可以在vscode中进行编辑，如果习惯使用vscode，也可以通过vscode远程访问服务器，然后配置python和R数据分析环境。相比于positron，vscode需要单独安装插件来配置分析环境。</p>
+<h3 id="1-为什么要使用vscode">1 为什么要使用vscode？</h3>
+<ol>
+<li>vscode是流行的文本编辑器，可以用来打开各种扩展名的生物数据；</li>
+</ol>
+<ol>
+<li>可以配置成python编程环境，用来学习和开发python程序；</li>
+</ol>
+<ol>
+<li>配置成R分析环境，运行R代码和R绘图；</li>
+</ol>
+<ol>
+<li>通过vscode可以远程ssh登录云服务器；</li>
+</ol>
+<ol>
+<li>vscode可以作为本地终端使用；</li>
+</ol>
+<ol>
+<li>posit公司的新一代R集成开发环境Positron采用vscode作为框架；</li>
+</ol>
+<ol>
+<li>vscode通过插件可以打开jupyter进行数据分析；</li>
+</ol>
+<ol>
+<li>通过插件vscode可以直接打开服务器中的pdf，图片以及网页文件；</li>
+</ol>
+<ol>
+<li>通过sftp插件，可以同步文件；</li>
+</ol>
+<ol>
+<li>vscode相比pycharm，打开速度更快；</li>
+</ol>
+<ol>
+<li>vscode集成了github</li>
+</ol>
+<ol>
+<li>vscode可以直接调用github Copilot AI编程；</li>
+</ol>
+<ol>
+<li>cusor AI编程基于vscode开发；</li>
+</ol>
+<ol>
+<li>trae AI编程直接在vscode中使用；</li>
+</ol>
+<ol>
+<li>Codespaces可以直接在vscode中打开；</li>
+</ol>
+<ol>
+<li>github代码直接在github.dev的vscode中打开查看；</li>
+</ol>
+<ol>
+<li>集成docker功能，dev container直接创建开发环境；</li>
+</ol>
+<p>综上，vscode是一款集大成的工具，我们日常很多生物信息分析的工作，都可以在vscode中完成，目前vscode已经是学习生物信息中必须要掌握的一款工具。</p>
+<h3 id="2-安装和使用vscode">2 安装和使用vscode</h3>
+<p>vscode官网：<a href="https://code.visualstudio.com/" rel="noopener noreferrer">https://code.visualstudio.com/</a></p>
+<p>下载vscode：<a href="https://code.visualstudio.com/Download" rel="noopener noreferrer">https://code.visualstudio.com/Download</a></p>
+<p>vscode文档：<a href="https://code.visualstudio.com/docs" rel="noopener noreferrer">https://code.visualstudio.com/docs</a></p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MmQzY2YxYmRhYmJlMTgyNTdlOWM0NjFlZjk4OTM2Y2NfNjhhNjA0YWJiYjU3M2IyMmNhYjZlOTc3NjNhYmEyYzhfSUQ6NzU3ODMyMDc3ODIyODM1Mzk5MV8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZjcwZTdjNjA2ZGUxZTkyY2UzZWNhMjU1Nzk3ZmI5ODhfOWUzZTg4NmFiYzdjNTBkMTQxZjkyYTNiZjliMjE4ZTZfSUQ6NzU3ODMyMDc3ODgwNzE2Nzk1Nl8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<h3 id="3-配置vscode">3 配置vscode</h3>
+<p>vscode的绝大部分功能都是通过插件完成的。接下来介绍如何在vscode中安装和使用插件。vscode的插件有很多种，而且有很多插件实现相同的功能，最好选择官方出品的插件和下载量较大的插件。</p>
+<p>打开vscode，选择左侧菜单，或者直接按快捷键“ctrl+shfit+x”，在插件应用商店中搜索插件，</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZGNlY2I3M2YyYWZiNjExZjA1OWI4Mzg4N2EzZDM1YjNfNGE0NTU3MTRjNjNhOWYzNTg5Y2E4YzMyN2M4NWYyOWNfSUQ6NzU3ODMyMDc3ODU1OTYyMjA5OF8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>下面列出一些常用的插件：</p>
+<p>Chinese（Microsoft）：简体中文菜单</p>
+<p>Remote Development（Microsoft）：远程开发套件，通过ssh远程连接服务器</p>
+<p>Aura Dark：vscode主题</p>
+<p>eva（fisheva）：vscode主题</p>
+<p>Material Icon Theme（Philipp Kief）：文件图标</p>
+<p>Live Preview（Microsoft）： 网页预览</p>
+<p>PDF Viewer（Mathematic Inc）：预览PDF文档</p>
+<p>markdownlint（David Anson）：查看markdown文件</p>
+<p>GitHub Codespaces（GitHub）：Codespaces</p>
+<p>GitHub Copilot（GitHub）：Github AI编程助手</p>
+<p>Gitpod（Gitpod）：gitpod官方工具</p>
+<p>sftp（Naizyskunk）：sftp同步工具。</p>
+<h3 id="4-vscode远程开发">4 vscode远程开发</h3>
+<p>vscode通过SSH可以直接连接服务器，并通过sftp插件同步数据。vscode的远程开发功能通过Remote Development插件实现。</p>
+<p><strong>1、安装ssh插件</strong></p>
+<p>ctrl+shift+x，打开vscode扩展，搜索Remote Development插件，该插件带有remote-ssh功能。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=YWEyZjFhNGQ5Mzg5MmEzNzc3MWZmZTc3YjkwY2JmOWNfMmQzODFhYzBkNzM1NmMzMzk4MTJlNjUyYzU0NDA2YjJfSUQ6NzU3ODMyMDc3OTc3NjAxOTQyMl8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p><strong>2、自动登录</strong></p>
+<p>该过程不是必须，为了使用方便，可以设置自动登录功能，如果不设置，也可以每次输入密码，windows系统打开终端命令行，通过ssh-keygen生产密钥对，将公钥上传至服务器。该公钥与登录vscode的一样。当然也可以设置不同的密钥对，实现对不同设备的登录。在windows终端中输入ssh-keygen命令。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=OWFjN2I3ZGI1ODBmODJjM2QzZWM1OTFmZWM3ZGU1YjdfOWM4NzMwYzkxZmJhNDE2N2MzMmMyMWFmZmJmMTkyNjRfSUQ6NzU3ODMyMDc3OTQ3MTM5MTcxMl8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p><strong>3、上传密钥</strong></p>
+<pre class="code-block doc-code doc-code-bash"><code>wangtong@DESKTOP-KK83803 MINGW64 ~/.ssh
+$ ssh-copy-id -p 10088 [bioinfo@v5.tongyuangene.com](mailto:bioinfo@v5.tongyuangene.com)</code></pre>
+<p>安装了git bash，可以直接使用ssh-copy-id命令传输密钥。如果没有安装，在windows系统下可以使用如下命令，注意需要将用户名切换到自己的用户名，服务器用户名和IP地址也要更换。下面代码仅作为演示。</p>
+<pre class="code-block doc-code doc-code-bash"><code>type C:\Users\wangtong\.ssh\id_ed25519.pub | ssh -p 10088 bioinfo@v5.tongyuangene.com &quot;cat &gt;&gt; .ssh/authorized_keys&quot;</code></pre>
+<p><strong>4、配置config文件</strong></p>
+<p>最后在本地vscode配置文件config中添加本地密钥文件。</p>
+<pre class="code-block doc-code doc-code-bash"><code># Read more about SSH config files: https://linux.die.net/man/5/ssh_config
+
+Host V5
+    HostName v5.tongyuangene.com
+    User bioinfo
+    Port 10088
+    IdentityFile &quot;C:\Users\genom\.ssh\id_ed25519&quot;
+
+Host V1
+    HostName v1.tongyuangene.com
+    User wangtong
+    Port 30003
+IdentityFile &quot;C:\Users\genom\.ssh\id_ed25519&quot;
+Host *
+    ServerAliveInterval 30
+</code></pre>
+<h3 id="5-vscode的sftp功能">5 vscode的sftp功能</h3>
+<p>vscode目前没有官方的sftp工具，有一些第三方的sftp插件，例如sftp（Naizyskunk）等，只能实现简单的数据同步，还无法实现filezilla等稳定的数据传输以及断点续传功能。只能实现一些小的代码和数据同步功能，不适合用来传输和同步大文件。</p>
+<p>该功能可以用于远程开发，例如在本地编辑脚本，通过sftp传输至服务器端运行。</p>
+<p>安装完成之后需要对sftp插件进行设置。</p>
+<p>“ctrl + shift + p”，然后选择sftp：config打开配置文件；</p>
+<pre class="code-block doc-code doc-code-json"><code>{
+    &quot;name&quot;: &quot;v5&quot;,
+    &quot;host&quot;: &quot;v5.tongyuangene.com&quot;,
+    &quot;protocol&quot;: &quot;sftp&quot;,
+    &quot;port&quot;: 10088,
+    &quot;secure&quot;: true,
+    &quot;username&quot;: &quot;bioinfo&quot;,
+    &quot;remotePath&quot;: &quot;/ifs1/User/bioinfo/git-demo&quot;,
+    &quot;uploadOnSave&quot;: true
+}</code></pre>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MzViODhmYmY0YmE3NzlhOWM3MjQ3MzQ2ODFiM2JlYzVfNThhMWE0ODRkNTcyODc0MDhkYzM5MjlhOTQyN2I5NzZfSUQ6NzU3ODMyMDc3ODE5NDg0ODk3NF8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<h3 id="6-远程查看文件">6 远程查看文件</h3>
+<p>通过vscode远程连接服务器，无需下载，即可通过插件远程查看各种文件。vscode可以通过下面的插件查看常用文件。</p>
+<p>Live Preview（Microsoft）： 网页和图片浏览</p>
+<p>PDF Viewer（Mathematic Inc）：预览PDF文档</p>
+<p>markdownlint（David Anson）：查看markdown文件</p>
+<p>Data Wrangler（Microsoft）: 查看处理excel表格</p>
+<h3 id="7-vscode快捷键">7 vscode快捷键</h3>
+<p>使用vscode一定要使用快捷键，这样可以极大提高编写代码的效率。windows中采用Ctrl，如果是mac系统，替换为Command。一些快捷键与微软其他程序相似。</p>
+<h3 id="8-在vscode中使用git">8 在vscode中使用git</h3>
+<p>vscode集成了git功能，可以在vscode中直接使用git。而且可以非常直观地显示每次提交代码的更改情况。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MmE2MmI4YWVhYjcxNDMwZWMxOGMxOWIxNDAxMWM1MjJfYjk3ZWIxNWQ3MGQwNzQwODU3ZTEyMGY0MGEzZDFiMDlfSUQ6NzU3ODMyMDc4MDUwMTU1MjA3MV8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<h3 id="9-运行python">9 运行python</h3>
+<p>想要在vscode中运行python，除了系统中已经安装了python解释器，还需要安装一些vscode插件。</p>
+<h4 id="9-1-安装python和jupyter插件">9.1 安装python和jupyter插件</h4>
+<p>安装完vscode之后还不能直接运行python，需要安装一些插件，vscode可以通过安装插件实现各种各样的功能。</p>
+<p>打开vscode，选择左侧菜单，或者直接按快捷键“ctrl+shift+x”，在插件应用商店中搜索插件，如果有微软官方提供的版本，尽量选择官方版本。需要一些必要插件。</p>
+<p>Python：连接vscode与python解释器</p>
+<p>Jupyter：运行jupyter</p>
+<p>Python Indent：python：控制python缩进</p>
+<p>Snippets：自动补全代码</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NTE5NWFlYjVkOWZjOWNhOGY3NDdmNTZmZmRlOTUyZmRfOGNkM2NmMDdmZTM2YmMxNGQ1ZDE2NjkyZTAzYmYxNDFfSUQ6NzU3ODMyMDc4MTcxMzY1NzAxMl8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>安装jupyter插件，这样就可以直接打开jupyter文档了。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MTFkNjhiZDA0MTFlYmIzZWJhNWE3MzY3NTRjNGIyMmZfZjc1YjUzODFjYzgwNmNlYzNhYTgyZTBkM2FlM2Q5ZWRfSUQ6NzU3ODMyMDc4MDUwMTUzNTY4N18xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<h4 id="9-2-vscode中运行jupyter">9.2 vscode中运行jupyter</h4>
+<p>启动vscode，新建一个python文件或者jupyter文件。编辑代码，按Ctrl+F5快捷键运行python。</p>
+<pre class="code-block doc-code doc-code-bash"><code>print(&#x27;Hello Python World!&#x27;)</code></pre>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZmM5OGFjZjM1MGU2NTA3MTExZDg1OWFkOTRiNmQ2MjVfODQ3MTVmYTM0NDU2MTZhMjY4YWQ3MGYyNjE1MzI2MmNfSUQ6NzU3ODMyMDc3OTU5MTQzNzQ5OF8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>新建一个jupyter文件，选择Anaconda解释器，可以直接打开jupyter文件，支持绘图显示。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=OWZiMjNkOWJjNDZiYWY5OGU0MTUwMTgyZjljNzc1ZmVfODI0OGU2ZmE3ZWY0YTg3ZmM0ZmUyOWY1YWU0MWE2ODFfSUQ6NzU3ODMyMDc4MDE5OTY2MDc0MF8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>vscode本身可以创建多个窗口，一边显示代码，一边进行操作。</p>
+<h4 id="9-3-在jupyter中进行数据分析">9.3 在jupyter中进行数据分析</h4>
+<p>Jupyter原来称为ipython notebook，所以扩展名为”.ipynb”。现在改为jupyter notebook。Jupyter内核为ipython。相比于ipython，除了可以交互式运行之外，还额外支持markdown文本，支持显示绘图等。可以将文本，代码，运行结果以及绘图保存到同一个文件内，直接转换为报告。</p>
+<p>此外，目前jupyter除了支持python，还支持R等多种语言，只需配置相应的内核即可。</p>
+<p><a href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_run-by-line" rel="noopener noreferrer">https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_run-by-line</a></p>
+<p>新建一个”.ipynb”文件，或者用vscode打开ipynb文件。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NjkwMmY0YjhmZmIyNGE4ZjRhZDVlNjE5NmFmMTg2NTJfY2RiM2VhZjI2ZTE3YTU4NWRhMWExZDQxNzQwZGI4NGNfSUQ6NzU3ODMyMDc3ODcwNjU3MDQ2OF8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MjFhZmI0MGI5NzYwMGQ1MmI0OGQxMjNkMjIwNjcwY2NfMTJjMTMyNDRjMjMzMjBkYTZmY2QzNWViMzc3NmU2NWFfSUQ6NzU3ODMyMDc3ODgwNzE4NDM0MF8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<h4 id="9-4-jupyter快捷键">9.4 jupyter快捷键</h4>
+<p>Ctrl+Enter：运行cell</p>
+<p>Shift+ Enter：运行cell并跳转到下一个cel</p>
+<p>A：添加cell</p>
+<p>B：添加Markdown</p>
+<p>M：当cell被选中时，M切换为markdown模式</p>
+<p>Y：当cell被选中时，Y切换为code模式</p>
+<p>dd：当cell被选中时，dd删除整个cell</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=N2Y3MDIxZDZjYjJkNmFiYzU3YmZjNGVjODUwZDYxNDVfYzNhNTY0Y2I2MTVkNDljYWFiMGJhNTlkNTBkZjQyNDRfSUQ6NzU3ODMyMDc4MDk2ODc1ODIyN18xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+                </div>
+            </div>
+            <aside class="doc-toc" aria-label="本页目录">
+                <h4>本页目录</h4>
+                <nav>
+                    <ul class="doc-toc-main">
+<li><a href="#1-为什么要使用vscode">1 为什么要使用vscode？</a></li>
+<li><a href="#2-安装和使用vscode">2 安装和使用vscode</a></li>
+<li><a href="#3-配置vscode">3 配置vscode</a></li>
+<li><a href="#4-vscode远程开发">4 vscode远程开发</a></li>
+<li><a href="#5-vscode的sftp功能">5 vscode的sftp功能</a></li>
+<li><a href="#6-远程查看文件">6 远程查看文件</a></li>
+<li><a href="#7-vscode快捷键">7 vscode快捷键</a></li>
+<li><a href="#8-在vscode中使用git">8 在vscode中使用git</a></li>
+<li><a href="#9-运行python">9 运行python</a></li>
+<li><ul class="doc-toc-sub">
+<li><a href="#9-1-安装python和jupyter插件">9.1 安装python和jupyter插件</a></li>
+<li><a href="#9-2-vscode中运行jupyter">9.2 vscode中运行jupyter</a></li>
+<li><a href="#9-3-在jupyter中进行数据分析">9.3 在jupyter中进行数据分析</a></li>
+<li><a href="#9-4-jupyter快捷键">9.4 jupyter快捷键</a></li>
+</ul></li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="logo-icon" aria-hidden="true"><svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><g transform="rotate(135 22 22)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"><path d="M8 16 C 16 10 28 10 36 16"/><path d="M8 28 C 16 34 28 34 36 28" opacity="0.7"/><path d="M14 18 L18 26"/><path d="M22 16 L22 28" opacity="0.8"/><path d="M30 18 L26 26"/></g></svg></span>
+                    <span>青岛同源基因</span>
+                </div>
+                <p>因为专注，所以专业。<br>专注新一代测序技术服务，<br>让生物数据分析触手可及。</p>
+            </div>
+            <div class="footer-col">
+                <h4>产品</h4>
+                <ul>
+                    <li><a href="cloud.html">生物云计算</a></li>
+                    <li><a href="video.html">视频课程</a></li>
+                    <li><a href="ai.html">AI+生物信息</a></li>
+                    <li><a href="docs.html">技术文档</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>资源</h4>
+                <ul>
+                    <li><a href="docs-login.html">云平台使用说明</a></li>
+                    <li><a href="cloud.html">服务器价格</a></li>
+                    <li><a href="video.html">试看视频</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>公司</h4>
+                <ul>
+                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="about.html#contact">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h4>联系我们</h4>
+                <p><strong>邮箱</strong>genomics@outlook.com</p>
+                <p><strong>地址</strong>山东省青岛市高新区秀园路1号科创慧谷(青岛)科技园 D-2-264</p>
+                <p><strong>网址</strong>www.tongyuangene.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>版权所有 © 2026 同源基因</span>
+            <span class="footer-legal">
+                <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">鲁ICP备19022587号-2</a>
+            </span>
+        </div>
+    </div>
+</footer>
+<script src="js/main.js"></script>
+<script src="js/docs-nav.js"></script>
+</body>
+</html>

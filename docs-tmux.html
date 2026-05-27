@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<script>(function(){var t=localStorage.getItem('ty-theme')||'light';document.documentElement.setAttribute('data-theme',t);})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tmux 不间断会话 | 技术文档</title>
+<meta name="description" content="基因学苑生物云平台使用说明（2026版）">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23cc0000'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-size='18' font-weight='bold' fill='white'%3E同%3C/text%3E%3C/svg%3E">
+</head>
+<body data-page="docs">
+<header class="header">
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon" aria-hidden="true"><svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><g transform="rotate(135 22 22)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"><path d="M8 16 C 16 10 28 10 36 16"/><path d="M8 28 C 16 34 28 34 36 28" opacity="0.7"/><path d="M14 18 L18 26"/><path d="M22 16 L22 28" opacity="0.8"/><path d="M30 18 L26 26"/></g></svg></span>
+            <span class="logo-text">
+                <span class="logo-name">青岛同源基因</span>
+                <span class="logo-en">TONGYUAN GENE</span>
+            </span>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="cloud.html">生物云计算</a></li>
+            <li><a href="video.html">生物信息视频课程</a></li>
+            <li><a href="ai.html">AI+生物信息</a></li>
+            <li><a href="docs.html" class="active">技术文档</a></li>
+            <li><a href="about.html">关于我们</a></li>
+        </ul>
+        <div class="nav-actions">
+            <div class="nav-toolbar">
+                <button type="button" class="toolbar-btn" id="theme-toggle" aria-label="切换到暗色模式" title="暗色模式">
+                    <span class="theme-icon-light" aria-hidden="true">☀️</span>
+                    <span class="theme-icon-dark" aria-hidden="true">🌙</span>
+                </button>
+            </div>
+            <a href="about.html" class="btn btn-primary">联系我们</a>
+        </div>
+        <button class="nav-toggle" aria-label="切换导航">☰</button>
+    </nav>
+</header>
+<section class="subhero subhero-compact">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">首页</a> / <a href="docs.html">技术文档</a> / <span>Tmux 不间断会话</span>
+        </div>
+        <h1>基因学苑生物云平台使用说明</h1>
+        <p>2026 版 · 从登录、传文件到软件环境与 AI 工具</p>
+    </div>
+</section>
+<section class="section section-docs">
+    <div class="container">
+        <div class="docs-layout docs-layout-3">
+            <aside class="docs-sidebar" aria-label="文档章节">
+                <h4 class="docs-sidebar-heading"><a href="docs.html">一、文档目录</a></h4>
+                <nav>
+                    <ul class="docs-sidebar-list">
+<li><a href="docs-login.html">二、如何登录</a></li>
+<li><a href="docs-software.html">三、管理生物软件</a></li>
+<li><a href="docs-container.html">四、使用容器管理生物软件</a></li>
+<li><a href="docs-database.html">五、生物数据库目录</a></li>
+<li><a href="docs-positron.html">六、通过 Positron 使用 R 和 Python</a></li>
+<li><a href="docs-rstudio.html">七、Rstudio 环境使用</a></li>
+<li><a href="docs-tmux.html" class="is-active">八、Tmux 不间断会话</a></li>
+<li><a href="docs-ai-tools.html">九、使用 AI 功能</a></li>
+<li><a href="docs-vscode.html">十、安装和使用 VSCode</a></li>
+<li><a href="docs-faq-cloud.html">十一、常见问题</a></li>
+<li><a href="docs-skills.html">十二、生物信息技能</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <div class="docs-content">
+                <div class="content-block doc-page">
+                    <h2 class="doc-page-title">八、Tmux不间断会话</h2>
+<p>一般我们做数据分析，通常是在自己电脑上远程登录服务器，通过nohup运行脚本让任务保持非挂起状态运行，如果忘记nohup之后使用disown将任务切换为nohup状态，但如果每条命令都使用nohup实在是比较麻烦。目前强烈推荐在服务器命令行使用tmux工具。</p>
+<h3 id="1-为什么要使用tmux">1 为什么要使用tmux</h3>
+<p>tmux（terminal multiplexer）是Linux上的终端复用神器，可从一个屏幕上管理多个终端。使用tmux，用户可以连接或断开会话，而保持终端在后台运行。也就是登录Linux之后，开始tmux，之后所有的操作都在tmux中完成，这样即使突然掉线了，所有的任务都还在tmux之中。</p>
+<p>tmux的结构包括会话(session)、窗口(window)、窗格(pane)三部分，会话实质是伪终端的集合，每个窗格表示一个伪终端，多个窗格展现在一个屏幕上，这一屏幕就叫窗口。tmux的操作主要包括对会话、窗口、窗格的创建、关闭、重命名、连接、分离、选择等等。</p>
+<ul>
+<li>网络不稳定，经常掉线，导致任务经常中断；</li>
+</ul>
+<ul>
+<li>使用网络下载数据，例如wget或者prefetch后台下载比较大的数据；</li>
+</ul>
+<ul>
+<li>下班后，退出ssh登录，关机走人，任务忘了切换到nohup模式；</li>
+</ul>
+<ul>
+<li>需要使用nohup的场景。</li>
+</ul>
+<p>其实使用tmux并不复杂，虽然tmux有非常多的功能，但是我们主要就是掌握一些基本快捷键就行。</p>
+<h3 id="2-如何使用tmux">2 如何使用tmux</h3>
+<p>在命令行直接输入tmux，就会自动打开一个新窗口，这个就是tmux的虚拟终端，可以说是伪终端。注意最下面多了一条绿色的状态栏，表示当前一个新终端里。接下来就可以在这个终端中运行任务了。这个任务就一直待在这个虚拟终端中，即使突然掉线了，还可以恢复任务，可以继续运行。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=OGZmMWRjMmJhYWUxMjQzZTBkNDU4OTJkNGZkNzdiM2NfNDZjZjY5YjQwZjBiZDc4Y2ZjMTZhY2YwZTNhZmEyMjBfSUQ6NzU3NzU5OTM2MTY2MTMyNDQ5NV8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<h3 id="3-常用快捷键">3 常用快捷键</h3>
+<p>使用tmux需要经常使用快捷键，其中最常用的就是ctrl+b，因为Linux shell下很多快捷键都被占用了，只能这样操作了，每次先按一下ctrl+b，在使用对应的快捷键。注意ctrl+b是在tmux窗口中使用，在原始的shell命令行下不管用。下面列出一些最常用的快捷操作：</p>
+<pre class="code-block doc-code doc-code-bash"><code>ctrl+b ?  :         显示快捷键帮助
+ctrl+b d   :        脱离当前会话；这样可以暂时返回Shell界面，输入tmux attach能够重新进入之前的会话
+ctrl+b 空格键 :     采用下一个内置布局，这个很有意思，在多屏时，用这个就会将多有屏幕竖着展示
+ctrl+b !    :        把当前窗口变为新窗口
+ctrl+b &quot;    :       横向向分隔窗口
+ctrl+b 上下键:      上一个及下一个分隔窗口
+ctrl+b &amp;  :         确认后退出当前tmux
+ctrl+b c     :      创建新窗口
+ctrl+b n     :      选择下一个窗口
+ctrl+b l     :      最后使用的窗口
+ctrl+b p     :      选择前一个窗口
+ctrl+b w     :      以菜单方式显示及选择窗口
+ctrl+b s      :     以菜单方式显示和选择会话。
+ctrl+b t      :     显示时钟。然后按enter键后就会恢复到shell终端状态</code></pre>
+<h3 id="4-tmux案例">4 tmux案例</h3>
+<p>接下来我们演示一条，使用tmux下载生物数据的案例。</p>
+<pre class="code-block doc-code doc-code-bash"><code>#1  新建会话，命名为wget
+tmux new -s wget
+
+# 2 运行命令
+wget -c ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/swissprot.gz
+
+# 3 按ctrl+b，然后字母d，退出会话，任务仍在运行
+$ tmux new -s wget
+[detached]
+
+#4 tmux ls查看任务
+$ tmux ls
+wget: 1 windows (created Wed Jul 24 10:22:34 2019) [114x26]
+
+#5 重新进入wget终端，第一个参数a也可以写成attach，任务正在运行
+tmux a -t wget
+
+#6 关闭会话任务,如果在会话中使用ctrl + d，或者exit，就会在退出会话，也关闭了该会话
+# tmux ls查看会话
+$ tmux ls
+
+#7 kill-session杀死会话，每个会话成为一个session
+$ tmux kill-session -t wget
+
+#8 关闭所有会话
+$ tmux kill-server</code></pre>
+<h3 id="5-多窗口管理">5 多窗口管理</h3>
+<p>如果一次创建了多个会话，tmux还可以对这些窗口进行管理，其实这个xshell自带这个功能，使用xshell更加方便。下面列出一些快捷键，感兴趣的可以尝试一下，首先还是在窗口中按ctrl+b，然后使用对应的快捷键。</p>
+<pre class="code-block doc-code doc-code-bash"><code>ctrl+b ” :  将当前面板平分为上下两块
+ctrl+b % :  将当前面板平分为左右两块
+ctrl+b x :  关闭当前面板
+ctrl+b ! : 将当前面板置于新窗口；即新建一个窗口，其中仅包含当前面板
+ctrl+b  Ctrl+方向键:以1个单元格为单位移动边缘以调整当前面板大小</code></pre>
+<h3 id="6-更多配置">6 更多配置</h3>
+<p>tmux的配置都在\~/.tmux.conf文件中，如果没有这个文件，可以自己提前创建一个。下面给出以下常用的配置。</p>
+<pre class="code-block doc-code doc-code-bash"><code># 鼠标支持
+  set -g mouse on
+
+  # 修改前缀键为Ctrl+a
+  set -g prefix C-a
+  unbind C-b
+  bind C-a send-prefix
+
+  # 窗口和面板编号从1开始
+  set -g base-index 1
+  set -g pane-base-index 1
+
+  # 256色支持
+  set -g default-terminal &quot;screen-256color&quot;
+
+  # 状态栏
+  set -g status-bg black
+  set -g status-fg yellow
+  set -g status-left &quot;#[fg=green]#H &quot;
+  set -g status-right &quot;#[fg=white]%H:%M %Y-%m-%d&quot;
+
+  # 面板切换
+  bind h select-pane -L
+  bind j select-pane -D
+  bind k select-pane -U
+  bind l select-pane -R
+
+  # 调整面板大小
+  bind -r H resize-pane -L 5
+  bind -r J resize-pane -D 5
+  bind -r K resize-pane -U 5
+  bind -r L resize-pane -R 5
+
+  # 重新加载配置
+  bind r source-file ~/.tmux.conf \; display &quot;Reloaded!&quot;
+
+  # 复制模式vi键位
+  set-window-option -g mode-keys vi
+  bind-key -T copy-mode-vi &#x27;v&#x27; send -X begin-selection
+  bind-key -T copy-mode-vi &#x27;y&#x27; send -X copy-selection
+
+  # 启用剪贴板共享
+  set-option -g set-clipboard on</code></pre>
+<p>修改完配置需要重新加载配置文件才能起作用。</p>
+<ul>
+</ul>
+<pre class="code-block doc-code doc-code-bash"><code># 重新加载配置 
+tmux source-file ~/.tmux.conf</code></pre>
+<p>tmux还有更多好用好玩的功能，可以查看tmux文档。</p>
+                </div>
+            </div>
+            <aside class="doc-toc" aria-label="本页目录">
+                <h4>本页目录</h4>
+                <nav>
+                    <ul class="doc-toc-main">
+<li><a href="#1-为什么要使用tmux">1 为什么要使用tmux</a></li>
+<li><a href="#2-如何使用tmux">2 如何使用tmux</a></li>
+<li><a href="#3-常用快捷键">3 常用快捷键</a></li>
+<li><a href="#4-tmux案例">4 tmux案例</a></li>
+<li><a href="#5-多窗口管理">5 多窗口管理</a></li>
+<li><a href="#6-更多配置">6 更多配置</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="logo-icon" aria-hidden="true"><svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><g transform="rotate(135 22 22)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"><path d="M8 16 C 16 10 28 10 36 16"/><path d="M8 28 C 16 34 28 34 36 28" opacity="0.7"/><path d="M14 18 L18 26"/><path d="M22 16 L22 28" opacity="0.8"/><path d="M30 18 L26 26"/></g></svg></span>
+                    <span>青岛同源基因</span>
+                </div>
+                <p>因为专注，所以专业。<br>专注新一代测序技术服务，<br>让生物数据分析触手可及。</p>
+            </div>
+            <div class="footer-col">
+                <h4>产品</h4>
+                <ul>
+                    <li><a href="cloud.html">生物云计算</a></li>
+                    <li><a href="video.html">视频课程</a></li>
+                    <li><a href="ai.html">AI+生物信息</a></li>
+                    <li><a href="docs.html">技术文档</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>资源</h4>
+                <ul>
+                    <li><a href="docs-login.html">云平台使用说明</a></li>
+                    <li><a href="cloud.html">服务器价格</a></li>
+                    <li><a href="video.html">试看视频</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>公司</h4>
+                <ul>
+                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="about.html#contact">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h4>联系我们</h4>
+                <p><strong>邮箱</strong>genomics@outlook.com</p>
+                <p><strong>地址</strong>山东省青岛市高新区秀园路1号科创慧谷(青岛)科技园 D-2-264</p>
+                <p><strong>网址</strong>www.tongyuangene.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>版权所有 © 2026 同源基因</span>
+            <span class="footer-legal">
+                <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">鲁ICP备19022587号-2</a>
+            </span>
+        </div>
+    </div>
+</footer>
+<script src="js/main.js"></script>
+<script src="js/docs-nav.js"></script>
+</body>
+</html>

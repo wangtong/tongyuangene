@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<script>(function(){var t=localStorage.getItem('ty-theme')||'light';document.documentElement.setAttribute('data-theme',t);})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>通过 Positron 使用 R 和 Python | 技术文档</title>
+<meta name="description" content="基因学苑生物云平台使用说明（2026版）">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23cc0000'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-size='18' font-weight='bold' fill='white'%3E同%3C/text%3E%3C/svg%3E">
+</head>
+<body data-page="docs">
+<header class="header">
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon" aria-hidden="true"><svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><g transform="rotate(135 22 22)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"><path d="M8 16 C 16 10 28 10 36 16"/><path d="M8 28 C 16 34 28 34 36 28" opacity="0.7"/><path d="M14 18 L18 26"/><path d="M22 16 L22 28" opacity="0.8"/><path d="M30 18 L26 26"/></g></svg></span>
+            <span class="logo-text">
+                <span class="logo-name">青岛同源基因</span>
+                <span class="logo-en">TONGYUAN GENE</span>
+            </span>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="cloud.html">生物云计算</a></li>
+            <li><a href="video.html">生物信息视频课程</a></li>
+            <li><a href="ai.html">AI+生物信息</a></li>
+            <li><a href="docs.html" class="active">技术文档</a></li>
+            <li><a href="about.html">关于我们</a></li>
+        </ul>
+        <div class="nav-actions">
+            <div class="nav-toolbar">
+                <button type="button" class="toolbar-btn" id="theme-toggle" aria-label="切换到暗色模式" title="暗色模式">
+                    <span class="theme-icon-light" aria-hidden="true">☀️</span>
+                    <span class="theme-icon-dark" aria-hidden="true">🌙</span>
+                </button>
+            </div>
+            <a href="about.html" class="btn btn-primary">联系我们</a>
+        </div>
+        <button class="nav-toggle" aria-label="切换导航">☰</button>
+    </nav>
+</header>
+<section class="subhero subhero-compact">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">首页</a> / <a href="docs.html">技术文档</a> / <span>通过 Positron 使用 R 和 Python</span>
+        </div>
+        <h1>基因学苑生物云平台使用说明</h1>
+        <p>2026 版 · 从登录、传文件到软件环境与 AI 工具</p>
+    </div>
+</section>
+<section class="section section-docs">
+    <div class="container">
+        <div class="docs-layout docs-layout-3">
+            <aside class="docs-sidebar" aria-label="文档章节">
+                <h4 class="docs-sidebar-heading"><a href="docs.html">一、文档目录</a></h4>
+                <nav>
+                    <ul class="docs-sidebar-list">
+<li><a href="docs-login.html">二、如何登录</a></li>
+<li><a href="docs-software.html">三、管理生物软件</a></li>
+<li><a href="docs-container.html">四、使用容器管理生物软件</a></li>
+<li><a href="docs-database.html">五、生物数据库目录</a></li>
+<li><a href="docs-positron.html" class="is-active">六、通过 Positron 使用 R 和 Python</a></li>
+<li><a href="docs-rstudio.html">七、Rstudio 环境使用</a></li>
+<li><a href="docs-tmux.html">八、Tmux 不间断会话</a></li>
+<li><a href="docs-ai-tools.html">九、使用 AI 功能</a></li>
+<li><a href="docs-vscode.html">十、安装和使用 VSCode</a></li>
+<li><a href="docs-faq-cloud.html">十一、常见问题</a></li>
+<li><a href="docs-skills.html">十二、生物信息技能</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <div class="docs-content">
+                <div class="content-block doc-page">
+                    <h2 class="doc-page-title">六、通过Positron使用R和python</h2>
+<p>服务器已经安装了Rstudio-server，可以通过浏览器来访问和使用R语言。不过目前推荐使用Positron工具，Positron可以远程登录服务器，直接使用R和Python，非常方便。</p>
+<p>如果仅使用python jupyter环境，也可以直接使用vscode来远程访问服务器。</p>
+<h3 id="1-安装positron">1 安装Positron</h3>
+<p>登录positron网址（https://positron.posit.co/），同意许可，然后下载最新版软件，下载完直接安装即可。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZTUwMTBiOGNjMzU2MjViN2EyOTdlYTM5YjQxZTNlNTZfYzRmYmQ4YjFhMDFmZTViMzBkMTc3ZmFlZGJhMmFlMjNfSUQ6NzU3NzU3MTIzODczOTI4MzE2N18xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<h3 id="2-使用positron进行ssh远程开发">2 使用Positron进行SSH远程开发</h3>
+<p>positron可以本地使用，这里主要使用其远程开发功能。Positron基于开源VSCode构建，已经内置了远程连接插件。打开软件，点击左侧的连接按钮（或按下<strong>Ctrl + Shift + P</strong>），在搜索框中输入“<strong>SSH: Connect to Host</strong>”，然后选择“Remote – SSH: Connect to Host”命令。此时，软件将会提示你输入远程主机的IP地址、用户名和密码。</p>
+<ul>
+</ul>
+<pre class="code-block doc-code doc-code-plain-text"><code>wangtong@v5.tongyuangene.com</code></pre>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=OWYwNzg0ZTgzZTg5NzdkM2Y2YTkxYmEyODMyOTM0MjFfNjM2ZDYwZmU0M2Q3N2IyMjU0MTE3MjRhMzAyMDI1OTVfSUQ6NzU3NzY1NTEyNzQ0NTg4NDExOF8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>如果默认端口号不是22，例如我们服务器10088，可以直接添加到尾部。</p>
+<ul>
+</ul>
+<pre class="code-block doc-code doc-code-plain-text"><code>wangtong@v5.tongyuangene.com:10088</code></pre>
+<p>第一次登录需要等待很长时间，positron需要在服务器段下载positron-server软件，有时候会因为下载不到而中断，需要多试几次。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MjNjNWJiM2E4ZGFiNGY4MzNhYTEyZjVjNGYxMzAxZTlfZGYwZjA2MjQ0MTUzZDllOGM5OTViYzczMDg1YWUyZTJfSUQ6NzU3NzU3MjQ1NjY4MTMxMTE3N18xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>当左下角显示ssh的时候则表示登录成功了。可以在终端菜单中使用命令行。</p>
+<h3 id="3-设置自动登录">3 设置自动登录</h3>
+<p>如果前面在登录服务器的地方，使用ssh-keygen生成密钥对，并已经配置好了SSH自动登录，接下来只需要设置配置文件即可。使用快捷键Ctrl + Shift + P，选择SSH Configuration File。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NTM5YjhiZTI1OTk5ZGFhMGRhNDE4YmIzZDcyNGY0MTZfMzZmZTcwOWQ1NDZjNjI4NzRlZmNiZDQ4ZWZhNDRhYjFfSUQ6NzU3NzU3Mzg2NjIzNTc0MzE2M18xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>输入下面内容</p>
+<pre class="code-block doc-code doc-code-bash"><code>Host wangtong
+    HostName v5.tongyuangene.com
+    User wangtong
+    Port 10088
+    IdentityFile &quot;C:\Users\wangtong\.ssh\id_ed25519&quot;
+    ServerAliveInterval 30</code></pre>
+<p>这里最重要的是要把公钥地址，接到 IdentityFile关键字后面，另外需要加上ServerAliveInterval 30，这样保证一直不断开。</p>
+<p>下一次在软件左侧菜单栏中登录即可。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZmQyYWRjZjQ5MTQ2MmZjYjY1MzA5MjdjMDA3Y2I2OTRfYjRhNzhlMDcxOTBhNjYxM2I1MWQxNTY2M2M3NmJkNzRfSUQ6NzU3NzU3NTE0NzExMzU0ODc0Ml8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<h3 id="4-选择不同的r版本">4 选择不同的R版本</h3>
+<p>使用Positron的最大优势就是无需配置R环境，登录之后即可自动识别系统的R和Python环境。我们可以切换不同的解释器，实现不同R版本之间的切换。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=Mjk5YzYyMDgzMmUxYjg0NjJlZjVmOTNjNzQ1Nzc2MDhfM2Q3M2YzY2ZlMTUwODgxOGYzOTA3YzBiYTA5NTY1MWVfSUQ6NzU3NzU3NjY5OTM5MjIxNjAwN18xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>比如这里有R 4.5和R 4.4两个版本，可以自己选择不同的版本。python的版本更加方便切换。</p>
+<p>如果没有找到自己的R或者Python版本，也可以在设置中添加。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ODQyMGYxN2E5ZjNjNWE3NDlkODdiNzk4Y2NiN2IxOTRfZTZiYzcxNzdhNzk2Y2Y0OTAxMjliZTRjNGUwNjUyYjBfSUQ6NzU3NzU3NzE3NTQ1Mzc5NzMzN18xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<h3 id="5-positron运行设置">5 Positron运行设置</h3>
+<p>Positron支持后台运行任务，当任务需要较长时间运行时，可以进行设置。打开设置，搜索\&amp;#34;kernelSupervisor.shutdownTimeout\&amp;#34; 选择indefinitely。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=OWEwNDdlMjc4Yzk1Y2IzMGI4NzI3ZjA0MTYyNzg3ZTZfYWFlZDVjODkyMzM3Yjg1ODI3MzRkM2M4ZWUzOGY1Y2JfSUQ6NzU3NzU3NzYwMzQ1NzAyNzAyNF8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>更多内容可以阅读Positron详细文档。</p>
+<p>https://positron.posit.co/remote-ssh.html</p>
+                </div>
+            </div>
+            <aside class="doc-toc" aria-label="本页目录">
+                <h4>本页目录</h4>
+                <nav>
+                    <ul class="doc-toc-main">
+<li><a href="#1-安装positron">1 安装Positron</a></li>
+<li><a href="#2-使用positron进行ssh远程开发">2 使用Positron进行SSH远程开发</a></li>
+<li><a href="#3-设置自动登录">3 设置自动登录</a></li>
+<li><a href="#4-选择不同的r版本">4 选择不同的R版本</a></li>
+<li><a href="#5-positron运行设置">5 Positron运行设置</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="logo-icon" aria-hidden="true"><svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><g transform="rotate(135 22 22)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"><path d="M8 16 C 16 10 28 10 36 16"/><path d="M8 28 C 16 34 28 34 36 28" opacity="0.7"/><path d="M14 18 L18 26"/><path d="M22 16 L22 28" opacity="0.8"/><path d="M30 18 L26 26"/></g></svg></span>
+                    <span>青岛同源基因</span>
+                </div>
+                <p>因为专注，所以专业。<br>专注新一代测序技术服务，<br>让生物数据分析触手可及。</p>
+            </div>
+            <div class="footer-col">
+                <h4>产品</h4>
+                <ul>
+                    <li><a href="cloud.html">生物云计算</a></li>
+                    <li><a href="video.html">视频课程</a></li>
+                    <li><a href="ai.html">AI+生物信息</a></li>
+                    <li><a href="docs.html">技术文档</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>资源</h4>
+                <ul>
+                    <li><a href="docs-login.html">云平台使用说明</a></li>
+                    <li><a href="cloud.html">服务器价格</a></li>
+                    <li><a href="video.html">试看视频</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>公司</h4>
+                <ul>
+                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="about.html#contact">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h4>联系我们</h4>
+                <p><strong>邮箱</strong>genomics@outlook.com</p>
+                <p><strong>地址</strong>山东省青岛市高新区秀园路1号科创慧谷(青岛)科技园 D-2-264</p>
+                <p><strong>网址</strong>www.tongyuangene.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>版权所有 © 2026 同源基因</span>
+            <span class="footer-legal">
+                <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">鲁ICP备19022587号-2</a>
+            </span>
+        </div>
+    </div>
+</footer>
+<script src="js/main.js"></script>
+<script src="js/docs-nav.js"></script>
+</body>
+</html>

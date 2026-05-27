@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <script>(function(){var t=localStorage.getItem('ty-theme')||'light';document.documentElement.setAttribute('data-theme',t);})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>文档目录 | 技术文档</title>
+<title>使用容器管理生物软件 | 技术文档</title>
 <meta name="description" content="基因学苑生物云平台使用说明（2026版）">
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23cc0000'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-size='18' font-weight='bold' fill='white'%3E同%3C/text%3E%3C/svg%3E">
@@ -42,7 +42,7 @@
 <section class="subhero subhero-compact">
     <div class="container">
         <div class="breadcrumb">
-            <a href="index.html">首页</a> / <a href="docs.html">技术文档</a> / <span>文档目录</span>
+            <a href="index.html">首页</a> / <a href="docs.html">技术文档</a> / <span>使用容器管理生物软件</span>
         </div>
         <h1>基因学苑生物云平台使用说明</h1>
         <p>2026 版 · 从登录、传文件到软件环境与 AI 工具</p>
@@ -52,12 +52,12 @@
     <div class="container">
         <div class="docs-layout docs-layout-3">
             <aside class="docs-sidebar" aria-label="文档章节">
-                <h4 class="docs-sidebar-heading"><a href="docs.html" class="is-active">一、文档目录</a></h4>
+                <h4 class="docs-sidebar-heading"><a href="docs.html">一、文档目录</a></h4>
                 <nav>
                     <ul class="docs-sidebar-list">
 <li><a href="docs-login.html">二、如何登录</a></li>
 <li><a href="docs-software.html">三、管理生物软件</a></li>
-<li><a href="docs-container.html">四、使用容器管理生物软件</a></li>
+<li><a href="docs-container.html" class="is-active">四、使用容器管理生物软件</a></li>
 <li><a href="docs-database.html">五、生物数据库目录</a></li>
 <li><a href="docs-positron.html">六、通过 Positron 使用 R 和 Python</a></li>
 <li><a href="docs-rstudio.html">七、Rstudio 环境使用</a></li>
@@ -71,15 +71,73 @@
             </aside>
             <div class="docs-content">
                 <div class="content-block doc-page">
-                    
-<h2 class="doc-page-title">一、文档目录</h2><p class="docs-index-intro">基因学苑生物云平台使用说明（2026 版）。点击下方章节进入对应页面：</p><ol class="docs-index-list"><li class="docs-index-item"><a href="docs-login.html" class="docs-index-link">二、如何登录</a></li><li class="docs-index-item"><a href="docs-software.html" class="docs-index-link">三、管理生物软件</a></li><li class="docs-index-item"><a href="docs-container.html" class="docs-index-link">四、使用容器管理生物软件</a></li><li class="docs-index-item"><a href="docs-database.html" class="docs-index-link">五、生物数据库目录</a></li><li class="docs-index-item"><a href="docs-positron.html" class="docs-index-link">六、通过 Positron 使用 R 和 Python</a></li><li class="docs-index-item"><a href="docs-rstudio.html" class="docs-index-link">七、Rstudio 环境使用</a></li><li class="docs-index-item"><a href="docs-tmux.html" class="docs-index-link">八、Tmux 不间断会话</a></li><li class="docs-index-item"><a href="docs-ai-tools.html" class="docs-index-link">九、使用 AI 功能</a></li><li class="docs-index-item"><a href="docs-vscode.html" class="docs-index-link">十、安装和使用 VSCode</a></li><li class="docs-index-item"><a href="docs-faq-cloud.html" class="docs-index-link">十一、常见问题</a></li><li class="docs-index-item"><a href="docs-skills.html" class="docs-index-link">十二、生物信息技能</a></li></ol>
+                    <h2 class="doc-page-title">四、使用容器管理生物软件</h2>
+<p>我们的生物云平台可以访问国际网络，因此可以使用docker或者apptainer等容器技术，一些比较复杂的软件，可以通过容器来安装。</p>
+<h3 id="1-使用docker安装软件">1 使用docker安装软件</h3>
+<p>BioContainers 是一个社区驱动的项目，它为创建、管理和分发生物信息学包（例如 conda）和容器（例如 docker、singularity）提供基础设施和基本指南。BioContainers 基于流行的框架 Conda、Docker 和 Singularity。</p>
+<p>biocontainer提供了另外一种选择，当conda环境比较乱的时候，可以选择容器技术。</p>
+<p><a href="https://biocontainers.pro/" rel="noopener noreferrer">https://biocontainers.pro/</a></p>
+<p><a href="https://biocontainers-edu.readthedocs.io/en/latest/introduction.html" rel="noopener noreferrer">https://biocontainers-edu.readthedocs.io/en/latest/introduction.html</a></p>
+<p>常见容器管理命令</p>
+<p>docker ps：查看正在运行的容器。</p>
+<p>docker ps -a：查看所有容器（包括已停止的）。</p>
+<p>docker rm 容器ID：删除已停止的容器。</p>
+<p>docker images：查看已下载的镜像。</p>
+<p>docker rmi 镜像ID：删除不再需要的镜像，节省空间。</p>
+<p>案例：使用docker安装qiime2</p>
+<pre class="code-block doc-code doc-code-bash"><code># 安装qiime2
+docker pull quay.io/qiime2/amplicon:2025.10
+
+# 测试软件
+docker run \
+  -v $(pwd):/data \
+  -it quay.io/qiime2/amplicon:2025.10 \
+  qiime info
+  
+#安装 blast
+docker pull biocontainers/blast:2.2.31
+docker run biocontainers/blast:2.2.31 blastp -help   </code></pre>
+<h3 id="2-使用apptainer安装软件">2 使用apptainer安装软件</h3>
+<p>Apptainer（原名 Singularity）是一款轻量级容器工具，专为高性能计算和科学研究设计。它允许用户在多种环境中运行相同的软件工具，同时保证高效、安全和可重复性。与 Docker 不同，Apptainer 专注于无 root 权限的安全运行，特别适用于 HPC 集群和实验室环境。</p>
+<pre class="code-block doc-code doc-code-bash"><code>利用Apptainer安装google deepvariant
+apptainer pull docker://google/deepvariant</code></pre>
+<h3 id="3-自己打包容器">3 自己打包容器</h3>
+<pre class="code-block doc-code doc-code-bash"><code>#下载镜像
+ apptainer pull ubuntu.sif docker://ubuntu:latest
+ 
+ #创建沙盒
+apptainer build --sandbox --fakeroot  ubuntu ubuntu.sif
+ 
+ #进入沙盒
+ apptainer shell --writable --fakeroot ubuntu
+ 
+ #安装软件
+ apt update
+ apt install -y bwa
+ apt install -y bwa
+ apt install -y samtools
+ apt install -y bcftools
+ apt install -y ncbi-blast+
+ apt install -y bedtools
+ apt install -y seqtk
+ apt install -y minimap2
+ apt install -y bowtie2
+
+#打包软件
+apptainer build --fakeroot bio.sif ubuntu
+
+#运行软件
+ ./bio.sif bwa
+ ./bio.sif samtools</code></pre>
                 </div>
             </div>
             <aside class="doc-toc" aria-label="本页目录">
                 <h4>本页目录</h4>
                 <nav>
                     <ul class="doc-toc-main">
-<li><span class="doc-toc-empty">请从左侧或下方列表选择章节</span></li>
+<li><a href="#1-使用docker安装软件">1 使用docker安装软件</a></li>
+<li><a href="#2-使用apptainer安装软件">2 使用apptainer安装软件</a></li>
+<li><a href="#3-自己打包容器">3 自己打包容器</a></li>
                     </ul>
                 </nav>
             </aside>

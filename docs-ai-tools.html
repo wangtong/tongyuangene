@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<script>(function(){var t=localStorage.getItem('ty-theme')||'light';document.documentElement.setAttribute('data-theme',t);})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使用 AI 功能 | 技术文档</title>
+<meta name="description" content="基因学苑生物云平台使用说明（2026版）">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23cc0000'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-size='18' font-weight='bold' fill='white'%3E同%3C/text%3E%3C/svg%3E">
+</head>
+<body data-page="docs">
+<header class="header">
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon" aria-hidden="true"><svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><g transform="rotate(135 22 22)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"><path d="M8 16 C 16 10 28 10 36 16"/><path d="M8 28 C 16 34 28 34 36 28" opacity="0.7"/><path d="M14 18 L18 26"/><path d="M22 16 L22 28" opacity="0.8"/><path d="M30 18 L26 26"/></g></svg></span>
+            <span class="logo-text">
+                <span class="logo-name">青岛同源基因</span>
+                <span class="logo-en">TONGYUAN GENE</span>
+            </span>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="cloud.html">生物云计算</a></li>
+            <li><a href="video.html">生物信息视频课程</a></li>
+            <li><a href="ai.html">AI+生物信息</a></li>
+            <li><a href="docs.html" class="active">技术文档</a></li>
+            <li><a href="about.html">关于我们</a></li>
+        </ul>
+        <div class="nav-actions">
+            <div class="nav-toolbar">
+                <button type="button" class="toolbar-btn" id="theme-toggle" aria-label="切换到暗色模式" title="暗色模式">
+                    <span class="theme-icon-light" aria-hidden="true">☀️</span>
+                    <span class="theme-icon-dark" aria-hidden="true">🌙</span>
+                </button>
+            </div>
+            <a href="about.html" class="btn btn-primary">联系我们</a>
+        </div>
+        <button class="nav-toggle" aria-label="切换导航">☰</button>
+    </nav>
+</header>
+<section class="subhero subhero-compact">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">首页</a> / <a href="docs.html">技术文档</a> / <span>使用 AI 功能</span>
+        </div>
+        <h1>基因学苑生物云平台使用说明</h1>
+        <p>2026 版 · 从登录、传文件到软件环境与 AI 工具</p>
+    </div>
+</section>
+<section class="section section-docs">
+    <div class="container">
+        <div class="docs-layout docs-layout-3">
+            <aside class="docs-sidebar" aria-label="文档章节">
+                <h4 class="docs-sidebar-heading"><a href="docs.html">一、文档目录</a></h4>
+                <nav>
+                    <ul class="docs-sidebar-list">
+<li><a href="docs-login.html">二、如何登录</a></li>
+<li><a href="docs-software.html">三、管理生物软件</a></li>
+<li><a href="docs-container.html">四、使用容器管理生物软件</a></li>
+<li><a href="docs-database.html">五、生物数据库目录</a></li>
+<li><a href="docs-positron.html">六、通过 Positron 使用 R 和 Python</a></li>
+<li><a href="docs-rstudio.html">七、Rstudio 环境使用</a></li>
+<li><a href="docs-tmux.html">八、Tmux 不间断会话</a></li>
+<li><a href="docs-ai-tools.html" class="is-active">九、使用 AI 功能</a></li>
+<li><a href="docs-vscode.html">十、安装和使用 VSCode</a></li>
+<li><a href="docs-faq-cloud.html">十一、常见问题</a></li>
+<li><a href="docs-skills.html">十二、生物信息技能</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <div class="docs-content">
+                <div class="content-block doc-page">
+                    <h2 class="doc-page-title">九、使用AI功能</h2>
+<p>目前我们已经为服务器配置了常用AI工具，包括Claude Code， Codex，Gemini Cli以及Qwen Coder。用户只需要拥有自己的API key，简单配置即可使用。</p>
+<p>很多AI工具网页版使用是免费的，如果通过API使用则需要付费。</p>
+<p>服务器有国际专线，可以使用国外AI工具，但需要自己单独访问外网购买API。</p>
+<h3 id="1-使用geimini-cli">1 使用geimini cli</h3>
+<p>1 首先通过科学上网访问Google AI Studio，登录google账户。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=YzMyYzJjZjQ3YzU4NzExMGFkNjQ4ZWRiY2M2MDgwYTNfMDVhYjcwY2E0NjRmNDg2MmVmYjZiZDk0OTcxODI4MDZfSUQ6NzU3NzY0NTg0MTYyOTc0NDA3MF8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>2 获取API密钥</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=OTQ5OGZiNTc0ZDkxODdhOTRlZjNjOTU4YWNkNGQzNDlfNTQ2OTJhNzY4ZGVmYzYxMTNjYmFlNDc3NWNlMGVhMTVfSUQ6NzU3NzY0NTgxNDc4MjA4NjM2Nl8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>3 将密钥添加到.bashrc配置中</p>
+<pre class="code-block doc-code doc-code-bash"><code>#请将YOUR_GEMINI_API_KEY替换为自己的api_key
+echo &#x27;export GEMINI_API_KEY=&quot;YOUR_GEMINI_API_KEY&quot;&#x27; &gt;&gt; ~/.bashrc
+source ~/.bashrc</code></pre>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NzM4MDQxZDMzNzJhMTcxMGQ0YjJhNTcyNzJmZTc2NjNfYWNhNWNmNjE3MjAxNDUxNTkwOTM3OGY0NTUzODljYTVfSUQ6NzU3NzY0Nzc2NzUxNDk5MTgzM18xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>4 开启Gemini 3模型</p>
+<p>目前Genimi3在gemini cli中需要单独开启，首先在命令界面选择设置/settings。然后将Preview Features设置为true。这样就开启了Gemini 3。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NDQyMmZjNjMwODE3ZTZhNzQyMTVmNGYyODgzODQzZDBfMTliNjQzZjExZDk0MDEyODc1MDk0NjE0YzdiZDRkMDJfSUQ6NzU3NzY0Nzg2NDc4MTY3MTYyNF8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>退出重新登录，然后通过/model选项开启gemini 3 pro模型。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MTc5NWRjNmZmOTJmODcxMjQ4ZjBmZWVlMzc1NTNlNzVfMDJhMzUxYzlhODUxMDU0MmNlNzg3Yzg3YTQ1MmZmNTNfSUQ6NzU3NzY0ODA4MjM0ODM5NTcxOF8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<h3 id="2-claude-code-国产大模型">2 Claude Code + 国产大模型</h3>
+<p>由于这些命令行都需要接入API，因此需要购买API。目前国产主流大模型基本上都兼容claude code API，其实各家大模型都兼容OpenAI定义的API格式。我们可以自由选择DeepSeek，Kimi，GLM，Qwen，只需要购买API，然后配上每家模型的地址就行。这里我们以智谱GLM4.6为例，选择智谱GLM是因为价格便宜，支持包月模式，比单纯使用API用起来划算。</p>
+<p>1、首先，登录智谱大语言模型平台，</p>
+<p>链接：https://www.bigmodel.cn/claude-code?ic=EVALLASW61</p>
+<p>2、注册账号，购买模型，目前有一个包季60元的比较适合，每 5 小时最多约 120 次 prompts，也就是1天能使用240次左右。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZWY3MDJlMDgyZDA2Yzg5YmM1NTc1OWJiM2NhOTAzMDNfZTJhYTJmNWI1MzQzZTE1NzcyYjQzZTQxNzM2YzNlMzRfSUQ6NzU3NzYwMTY4NDI3NDU4MDY4Nl8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>3、购买完成之后获取API key。</p>
+<p><strong>配置AI工具</strong></p>
+<p>配置环境，将购买的API添加到配置文件中。详细可以观看GLM官方文档。</p>
+<p>https://docs.bigmodel.cn/cn/guide/develop/claude</p>
+<p>方法一：自动配置</p>
+<ul>
+</ul>
+<pre class="code-block doc-code doc-code-bash"><code>curl -O &quot;https://cdn.bigmodel.cn/install/claude_code_env.sh&quot; &amp;&amp; bash ./claude_code_env.sh</code></pre>
+<p>运行该脚本，等到需要输入API的地方输入API即可。</p>
+<p>方法二：手动配置</p>
+<p>修改`\~/.claude/settings.json` 文件，将your_zhipu_api_key修改为APIkey即可。</p>
+<pre class="code-block doc-code doc-code-json"><code>{
+    &quot;env&quot;: {
+        &quot;ANTHROPIC_AUTH_TOKEN&quot;: &quot;your_zhipu_api_key&quot;,
+        &quot;ANTHROPIC_BASE_URL&quot;: &quot;https://open.bigmodel.cn/api/anthropic&quot;,
+        &quot;API_TIMEOUT_MS&quot;: &quot;3000000&quot;,
+        &quot;CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC&quot;: 1
+    }
+}</code></pre>
+<p>然后启动claude code，选择使用API方式就可以使用了。</p>
+<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MDhiNmQ1YmRmMTNkMTA5YTY2ZmYxMjkyNjFiMWZjODlfMTQ3NzY1MTcwYjg2ZjE4MjU2YTdhMjg1ZjU0YzBjMmRfSUQ6NzU3NzYwMTkxNjkxNTU1MTE5M18xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<p>其他模型使用方法更加简单，只需要将变量添加到.bashrc文件中即可。例如DeepSeek。</p>
+<pre class="code-block doc-code doc-code-bash"><code># 将${DEEPSEEK_API_KEY}更换为自己的API key
+export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic
+export ANTHROPIC_AUTH_TOKEN=${DEEPSEEK_API_KEY}
+export API_TIMEOUT_MS=600000
+export ANTHROPIC_MODEL=deepseek-chat
+export ANTHROPIC_SMALL_FAST_MODEL=deepseek-chat
+export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1</code></pre>
+                </div>
+            </div>
+            <aside class="doc-toc" aria-label="本页目录">
+                <h4>本页目录</h4>
+                <nav>
+                    <ul class="doc-toc-main">
+<li><a href="#1-使用geimini-cli">1 使用geimini cli</a></li>
+<li><a href="#2-claude-code-国产大模型">2 Claude Code + 国产大模型</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="logo-icon" aria-hidden="true"><svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><g transform="rotate(135 22 22)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"><path d="M8 16 C 16 10 28 10 36 16"/><path d="M8 28 C 16 34 28 34 36 28" opacity="0.7"/><path d="M14 18 L18 26"/><path d="M22 16 L22 28" opacity="0.8"/><path d="M30 18 L26 26"/></g></svg></span>
+                    <span>青岛同源基因</span>
+                </div>
+                <p>因为专注，所以专业。<br>专注新一代测序技术服务，<br>让生物数据分析触手可及。</p>
+            </div>
+            <div class="footer-col">
+                <h4>产品</h4>
+                <ul>
+                    <li><a href="cloud.html">生物云计算</a></li>
+                    <li><a href="video.html">视频课程</a></li>
+                    <li><a href="ai.html">AI+生物信息</a></li>
+                    <li><a href="docs.html">技术文档</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>资源</h4>
+                <ul>
+                    <li><a href="docs-login.html">云平台使用说明</a></li>
+                    <li><a href="cloud.html">服务器价格</a></li>
+                    <li><a href="video.html">试看视频</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>公司</h4>
+                <ul>
+                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="about.html#contact">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h4>联系我们</h4>
+                <p><strong>邮箱</strong>genomics@outlook.com</p>
+                <p><strong>地址</strong>山东省青岛市高新区秀园路1号科创慧谷(青岛)科技园 D-2-264</p>
+                <p><strong>网址</strong>www.tongyuangene.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>版权所有 © 2026 同源基因</span>
+            <span class="footer-legal">
+                <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">鲁ICP备19022587号-2</a>
+            </span>
+        </div>
+    </div>
+</footer>
+<script src="js/main.js"></script>
+<script src="js/docs-nav.js"></script>
+</body>
+</html>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <script>(function(){var t=localStorage.getItem('ty-theme')||'light';document.documentElement.setAttribute('data-theme',t);})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>文档目录 | 技术文档</title>
+<title>生物数据库目录 | 技术文档</title>
 <meta name="description" content="基因学苑生物云平台使用说明（2026版）">
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23cc0000'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-size='18' font-weight='bold' fill='white'%3E同%3C/text%3E%3C/svg%3E">
@@ -42,7 +42,7 @@
 <section class="subhero subhero-compact">
     <div class="container">
         <div class="breadcrumb">
-            <a href="index.html">首页</a> / <a href="docs.html">技术文档</a> / <span>文档目录</span>
+            <a href="index.html">首页</a> / <a href="docs.html">技术文档</a> / <span>生物数据库目录</span>
         </div>
         <h1>基因学苑生物云平台使用说明</h1>
         <p>2026 版 · 从登录、传文件到软件环境与 AI 工具</p>
@@ -52,13 +52,13 @@
     <div class="container">
         <div class="docs-layout docs-layout-3">
             <aside class="docs-sidebar" aria-label="文档章节">
-                <h4 class="docs-sidebar-heading"><a href="docs.html" class="is-active">一、文档目录</a></h4>
+                <h4 class="docs-sidebar-heading"><a href="docs.html">一、文档目录</a></h4>
                 <nav>
                     <ul class="docs-sidebar-list">
 <li><a href="docs-login.html">二、如何登录</a></li>
 <li><a href="docs-software.html">三、管理生物软件</a></li>
 <li><a href="docs-container.html">四、使用容器管理生物软件</a></li>
-<li><a href="docs-database.html">五、生物数据库目录</a></li>
+<li><a href="docs-database.html" class="is-active">五、生物数据库目录</a></li>
 <li><a href="docs-positron.html">六、通过 Positron 使用 R 和 Python</a></li>
 <li><a href="docs-rstudio.html">七、Rstudio 环境使用</a></li>
 <li><a href="docs-tmux.html">八、Tmux 不间断会话</a></li>
@@ -71,15 +71,42 @@
             </aside>
             <div class="docs-content">
                 <div class="content-block doc-page">
-                    
-<h2 class="doc-page-title">一、文档目录</h2><p class="docs-index-intro">基因学苑生物云平台使用说明（2026 版）。点击下方章节进入对应页面：</p><ol class="docs-index-list"><li class="docs-index-item"><a href="docs-login.html" class="docs-index-link">二、如何登录</a></li><li class="docs-index-item"><a href="docs-software.html" class="docs-index-link">三、管理生物软件</a></li><li class="docs-index-item"><a href="docs-container.html" class="docs-index-link">四、使用容器管理生物软件</a></li><li class="docs-index-item"><a href="docs-database.html" class="docs-index-link">五、生物数据库目录</a></li><li class="docs-index-item"><a href="docs-positron.html" class="docs-index-link">六、通过 Positron 使用 R 和 Python</a></li><li class="docs-index-item"><a href="docs-rstudio.html" class="docs-index-link">七、Rstudio 环境使用</a></li><li class="docs-index-item"><a href="docs-tmux.html" class="docs-index-link">八、Tmux 不间断会话</a></li><li class="docs-index-item"><a href="docs-ai-tools.html" class="docs-index-link">九、使用 AI 功能</a></li><li class="docs-index-item"><a href="docs-vscode.html" class="docs-index-link">十、安装和使用 VSCode</a></li><li class="docs-index-item"><a href="docs-faq-cloud.html" class="docs-index-link">十一、常见问题</a></li><li class="docs-index-item"><a href="docs-skills.html" class="docs-index-link">十二、生物信息技能</a></li></ol>
+                    <h2 class="doc-page-title">五、 生物数据库目录</h2>
+<p>服务器内置了大量生物数据库，并且我们一直在添加更新和添加新内容，如果里面不包含需要的数据库，可以联系管理员添加。</p>
+<p>数据库所在目录：/ifs1/Database/</p>
+<p>注：付费数据库无法提供。</p>
+<pre class="code-block doc-code doc-code-python"><code>├── checkm ： #checkm数据库
+├── db.list ： #数据版本列表
+├── eggnog # eggnog基因功能注释数据库
+├── gatk  # gatk软件数据库
+├── gtdbtk_r220_data/ # GTDB数据库
+├── humann2_databases  # humann2物种分类数据库
+├── humann3_databases  # humann3物种分类数据库
+├── k2_standard_20240904 # kraken2物种分类数据库
+├── kneadData_databases   # keaddata质控过滤数据库
+├── kraken  # kraken1数据库 
+├── metaphlan4  # metaphlan4物种分类数据库
+├── metawrap # metawrap软件配套数据库
+├── nr ：blast比对nr库
+├── nr_diamond ： diamond比对nr库
+├── nt ：blast比对nt库
+├── nt_euk ：
+├── nt_prok ：
+├── nt_viruses  ：
+├── plasmid  # 质粒基因组数据库
+├── refdata-gex-GRCh38-2024-A  #人基因组STAR比对数据库
+├── refdata-gex-mm10-2020-A    # 小鼠基因组STAR比对数据库
+├── RepBaseRepeatMaskerEdition-20181026
+├── swissprot ： swissprot数据库 
+├── taxonomy  ：物种分类数据库
+└── viral  ： 病毒基因组数据库</code></pre>
                 </div>
             </div>
             <aside class="doc-toc" aria-label="本页目录">
                 <h4>本页目录</h4>
                 <nav>
                     <ul class="doc-toc-main">
-<li><span class="doc-toc-empty">请从左侧或下方列表选择章节</span></li>
+<li><span class="doc-toc-empty">本页无子目录</span></li>
                     </ul>
                 </nav>
             </aside>
