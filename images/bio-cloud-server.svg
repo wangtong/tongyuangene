@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title desc">
+  <title id="title">生物云服务器资源主题图</title>
+  <desc id="desc">高性能服务器、云端算力、DNA 双螺旋和生物数据分析面板融合的科技插画。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#090d1f"/><stop offset="0.55" stop-color="#1d1027"/><stop offset="1" stop-color="#3a070b"/></linearGradient>
+    <radialGradient id="glow" cx="62%" cy="36%" r="52%"><stop stop-color="#00d4c8" stop-opacity=".36"/><stop offset=".42" stop-color="#cc0000" stop-opacity=".22"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff7878"/><stop offset="1" stop-color="#cc0000"/></linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#76fff3"/><stop offset="1" stop-color="#00a896"/></linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="8"/></filter>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/><circle cx="760" cy="280" r="360" fill="url(#glow)"/>
+  <g stroke="rgba(255,255,255,.07)" stroke-width="1"><path d="M0 120h1200M0 260h1200M0 400h1200M0 540h1200M0 680h1200M150 0v800M330 0v800M510 0v800M690 0v800M870 0v800M1050 0v800"/></g>
+  <g opacity=".9" fill="none" stroke-width="5" stroke-linecap="round">
+    <path d="M145 140c170 90 170 250 0 340s-170 250 0 340" stroke="url(#cyan)"/>
+    <path d="M255 140c-170 90-170 250 0 340s170 250 0 340" stroke="url(#red)"/>
+    <g stroke="rgba(255,255,255,.35)" stroke-width="3"><path d="M163 190h74M128 278h164M116 365h185M141 452h135M168 540h69M132 628h156"/></g>
+  </g>
+  <g transform="translate(430 158)">
+    <path d="M95 75c18-54 108-67 149-24 35-18 86-2 103 34 61 0 100 38 100 86 0 51-42 89-98 89H72c-53 0-93-34-93-81 0-54 48-94 116-104z" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.42)" stroke-width="3"/>
+    <text x="216" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" font-weight="700" fill="#fff">BIO CLOUD</text>
+  </g>
+  <g transform="translate(500 435)">
+    <rect x="0" y="0" width="420" height="190" rx="22" fill="rgba(8,12,30,.82)" stroke="rgba(255,255,255,.22)"/>
+    <g transform="translate(26 28)"><rect width="110" height="136" rx="10" fill="#171b33" stroke="#596077"/><g fill="#00ff99"><circle cx="22" cy="27" r="7"/><circle cx="22" cy="66" r="7"/><circle cx="22" cy="105" r="7"/></g><g fill="#26304f"><rect x="42" y="20" width="48" height="12" rx="6"/><rect x="42" y="59" width="48" height="12" rx="6"/><rect x="42" y="98" width="48" height="12" rx="6"/></g></g>
+    <g transform="translate(175 28)" stroke="rgba(255,255,255,.55)" fill="none"><path d="M0 68h170M85 0v136M21 28l128 78M149 28L21 108"/><g fill="url(#cyan)" stroke="none"><circle cx="0" cy="68" r="11"/><circle cx="85" cy="0" r="11"/><circle cx="170" cy="68" r="11"/><circle cx="85" cy="136" r="11"/><circle cx="85" cy="68" r="18"/></g></g>
+  </g>
+  <g transform="translate(820 124)" opacity=".95"><rect width="250" height="170" rx="18" fill="rgba(255,255,255,.09)" stroke="rgba(255,255,255,.25)"/><path d="M32 126c36-54 67-33 94-70 28-39 54-20 92-41" fill="none" stroke="url(#red)" stroke-width="8" stroke-linecap="round"/><g fill="#fff" opacity=".82"><rect x="30" y="30" width="56" height="10" rx="5"/><rect x="30" y="51" width="88" height="10" rx="5"/><rect x="30" y="72" width="48" height="10" rx="5"/></g></g>
+</svg>
