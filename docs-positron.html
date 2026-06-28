@@ -76,23 +76,23 @@
 <p>如果仅使用python jupyter环境，也可以直接使用vscode来远程访问服务器。</p>
 <h3 id="1-安装positron">1 安装Positron</h3>
 <p>登录positron网址（https://positron.posit.co/），同意许可，然后下载最新版软件，下载完直接安装即可。</p>
-<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZTUwMTBiOGNjMzU2MjViN2EyOTdlYTM5YjQxZTNlNTZfYzRmYmQ4YjFhMDFmZTViMzBkMTc3ZmFlZGJhMmFlMjNfSUQ6NzU3NzU3MTIzODczOTI4MzE2N18xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="images/docs/doc-image-29.png" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
 <h3 id="2-使用positron进行ssh远程开发">2 使用Positron进行SSH远程开发</h3>
 <p>positron可以本地使用，这里主要使用其远程开发功能。Positron基于开源VSCode构建，已经内置了远程连接插件。打开软件，点击左侧的连接按钮（或按下<strong>Ctrl + Shift + P</strong>），在搜索框中输入“<strong>SSH: Connect to Host</strong>”，然后选择“Remote – SSH: Connect to Host”命令。此时，软件将会提示你输入远程主机的IP地址、用户名和密码。</p>
 <ul>
 </ul>
 <pre class="code-block doc-code doc-code-plain-text"><code>wangtong@v5.tongyuangene.com</code></pre>
-<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=OWYwNzg0ZTgzZTg5NzdkM2Y2YTkxYmEyODMyOTM0MjFfNjM2ZDYwZmU0M2Q3N2IyMjU0MTE3MjRhMzAyMDI1OTVfSUQ6NzU3NzY1NTEyNzQ0NTg4NDExOF8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="images/docs/doc-image-30.png" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
 <p>如果默认端口号不是22，例如我们服务器10088，可以直接添加到尾部。</p>
 <ul>
 </ul>
 <pre class="code-block doc-code doc-code-plain-text"><code>wangtong@v5.tongyuangene.com:10088</code></pre>
 <p>第一次登录需要等待很长时间，positron需要在服务器段下载positron-server软件，有时候会因为下载不到而中断，需要多试几次。</p>
-<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MjNjNWJiM2E4ZGFiNGY4MzNhYTEyZjVjNGYxMzAxZTlfZGYwZjA2MjQ0MTUzZDllOGM5OTViYzczMDg1YWUyZTJfSUQ6NzU3NzU3MjQ1NjY4MTMxMTE3N18xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="images/docs/doc-image-31.png" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
 <p>当左下角显示ssh的时候则表示登录成功了。可以在终端菜单中使用命令行。</p>
 <h3 id="3-设置自动登录">3 设置自动登录</h3>
 <p>如果前面在登录服务器的地方，使用ssh-keygen生成密钥对，并已经配置好了SSH自动登录，接下来只需要设置配置文件即可。使用快捷键Ctrl + Shift + P，选择SSH Configuration File。</p>
-<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NTM5YjhiZTI1OTk5ZGFhMGRhNDE4YmIzZDcyNGY0MTZfMzZmZTcwOWQ1NDZjNjI4NzRlZmNiZDQ4ZWZhNDRhYjFfSUQ6NzU3NzU3Mzg2NjIzNTc0MzE2M18xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="images/docs/doc-image-32.png" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
 <p>输入下面内容</p>
 <pre class="code-block doc-code doc-code-bash"><code>Host wangtong
     HostName v5.tongyuangene.com
@@ -102,16 +102,16 @@
     ServerAliveInterval 30</code></pre>
 <p>这里最重要的是要把公钥地址，接到 IdentityFile关键字后面，另外需要加上ServerAliveInterval 30，这样保证一直不断开。</p>
 <p>下一次在软件左侧菜单栏中登录即可。</p>
-<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZmQyYWRjZjQ5MTQ2MmZjYjY1MzA5MjdjMDA3Y2I2OTRfYjRhNzhlMDcxOTBhNjYxM2I1MWQxNTY2M2M3NmJkNzRfSUQ6NzU3NzU3NTE0NzExMzU0ODc0Ml8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="images/docs/doc-image-33.png" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
 <h3 id="4-选择不同的r版本">4 选择不同的R版本</h3>
 <p>使用Positron的最大优势就是无需配置R环境，登录之后即可自动识别系统的R和Python环境。我们可以切换不同的解释器，实现不同R版本之间的切换。</p>
-<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=Mjk5YzYyMDgzMmUxYjg0NjJlZjVmOTNjNzQ1Nzc2MDhfM2Q3M2YzY2ZlMTUwODgxOGYzOTA3YzBiYTA5NTY1MWVfSUQ6NzU3NzU3NjY5OTM5MjIxNjAwN18xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="images/docs/doc-image-34.png" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
 <p>比如这里有R 4.5和R 4.4两个版本，可以自己选择不同的版本。python的版本更加方便切换。</p>
 <p>如果没有找到自己的R或者Python版本，也可以在设置中添加。</p>
-<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ODQyMGYxN2E5ZjNjNWE3NDlkODdiNzk4Y2NiN2IxOTRfZTZiYzcxNzdhNzk2Y2Y0OTAxMjliZTRjNGUwNjUyYjBfSUQ6NzU3NzU3NzE3NTQ1Mzc5NzMzN18xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="images/docs/doc-image-35.png" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
 <h3 id="5-positron运行设置">5 Positron运行设置</h3>
 <p>Positron支持后台运行任务，当任务需要较长时间运行时，可以进行设置。打开设置，搜索\&amp;#34;kernelSupervisor.shutdownTimeout\&amp;#34; 选择indefinitely。</p>
-<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=OWEwNDdlMjc4Yzk1Y2IzMGI4NzI3ZjA0MTYyNzg3ZTZfYWFlZDVjODkyMzM3Yjg1ODI3MzRkM2M4ZWUzOGY1Y2JfSUQ6NzU3NzU3NzYwMzQ1NzAyNzAyNF8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="images/docs/doc-image-36.png" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
 <p>更多内容可以阅读Positron详细文档。</p>
 <p>https://positron.posit.co/remote-ssh.html</p>
                 </div>

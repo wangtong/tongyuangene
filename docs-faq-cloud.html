@@ -83,7 +83,7 @@
 <p>根据个人分析需求选择适合自己的服务器类型，可以选择额外增加，例如要增加1T磁盘，则每个季度增加500元，包年用户1T每年1500元。</p>
 <h3 id="5-为何传输数据速度很慢">5 为何传输数据速度很慢？</h3>
 <p>由于物理距离原因，目前从国内下载国外数据速度一般比较慢，即使用个人电脑下载速度也慢，推荐使用aspera进行下载。上传数据到服务器，国内上传速度一般可以达到3-5M/s，网速传输速度也和个人宽带条件有关，如果个人带宽较小，比如10M，那么传输速度只能达到几百K。可以通过speedtest测试网速，注意将单位设置为Mb/s。</p>
-<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZDI0MmI1MTY1ZmE5M2Y1ZjczZTUyMzZkMmM4YTY0YmNfNGIxN2ZhMThlOThjYjE2NWQwZDcyMjMxYjYyOTk1NDJfSUQ6NzU3NzY1NjkxNzEwMDM2NzA0OV8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="images/docs/doc-image-62.png" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
 <h3 id="6-如果有需要的软件没有怎么办">6 如果有需要的软件没有怎么办？</h3>
 <p>强烈推荐每个用户自行安装bioconda，通过bioconda可以很容易很方便的自己需要的软件。如果bioconda不支持，可以尝试apptainer安装。</p>
 <h3 id="7-是否可以开发票">7 是否可以开发票？</h3>
@@ -114,7 +114,7 @@
 <pre class="code-block doc-code doc-code-bash"><code>rm -rf .local/share/rstudio/sessions/*</code></pre>
 <h3 id="12-服务器登录一段时间之后为什么断了">12 服务器登录一段时间之后为什么断了</h3>
 <p>登录服务器突然掉线可能有多种原因造成的，主要有会话超时、网络不稳定、SSH配置、客户端配置等因素。首先我们来说“自动掉线”，“自动掉线”在技术上通常称为 会话超时。服务器为了安全，默认SSH登录之后一段时间不操作就会自动掉线，具体时间由 `sshd_config`文件中的 `ClientAliveInterval`和 `ClientAliveCountMax`相乘得到，一般服务器默认是10-30分钟。这种情况容易解决，需要用户在客户端配置，例如设置每间隔一段时间向服务器发送“心动信号”。</p>
-<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MTI5Y2JiOTE0MWE3OWEwMWRmZThlNjBhOGUxOWFjZmRfNzcxMzM4NDEzODkzYjY2M2FhNTU2YjVlNDQwNDMyYzhfSUQ6NzU3ODMyNDU4MDA1ODU2NTYwMF8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="images/docs/doc-image-63.png" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
 <p>例如在termius中，将这个值设置为30，这样每隔30秒，软件会自动向服务器端发送一个信号，代表客户端有操作行为，不要断掉连接。</p>
 <p>第二种情况是网络不稳定，网络在传输过程中存在不连续性，尤其是无线网络，例如其他电子设备干扰，金属物体造成的物理障碍，这种不稳定对于浏览器等软件并不明显，会有很好的连续性，电脑端不会显示网络中断，但服务器连接会突然断掉，</p>
 <p>所以，在操作服务器时，如果运行比较长的任务，一定要使用nohup，将任务放到后台，或者使用tmux或者screen等不间断会话工具，这样即使出现掉线，也不影响任务。</p>

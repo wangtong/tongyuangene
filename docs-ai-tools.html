@@ -77,25 +77,25 @@
 <p>服务器有国际专线，可以使用国外AI工具，但需要自己单独访问外网购买API。</p>
 <h3 id="1-使用geimini-cli">1 使用geimini cli</h3>
 <p>1 首先通过科学上网访问Google AI Studio，登录google账户。</p>
-<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=YzMyYzJjZjQ3YzU4NzExMGFkNjQ4ZWRiY2M2MDgwYTNfMDVhYjcwY2E0NjRmNDg2MmVmYjZiZDk0OTcxODI4MDZfSUQ6NzU3NzY0NTg0MTYyOTc0NDA3MF8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="images/docs/doc-image-41.png" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
 <p>2 获取API密钥</p>
-<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=OTQ5OGZiNTc0ZDkxODdhOTRlZjNjOTU4YWNkNGQzNDlfNTQ2OTJhNzY4ZGVmYzYxMTNjYmFlNDc3NWNlMGVhMTVfSUQ6NzU3NzY0NTgxNDc4MjA4NjM2Nl8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="images/docs/doc-image-42.webp" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
 <p>3 将密钥添加到.bashrc配置中</p>
 <pre class="code-block doc-code doc-code-bash"><code>#请将YOUR_GEMINI_API_KEY替换为自己的api_key
 echo &#x27;export GEMINI_API_KEY=&quot;YOUR_GEMINI_API_KEY&quot;&#x27; &gt;&gt; ~/.bashrc
 source ~/.bashrc</code></pre>
-<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NzM4MDQxZDMzNzJhMTcxMGQ0YjJhNTcyNzJmZTc2NjNfYWNhNWNmNjE3MjAxNDUxNTkwOTM3OGY0NTUzODljYTVfSUQ6NzU3NzY0Nzc2NzUxNDk5MTgzM18xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="images/docs/doc-image-43.webp" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
 <p>4 开启Gemini 3模型</p>
 <p>目前Genimi3在gemini cli中需要单独开启，首先在命令界面选择设置/settings。然后将Preview Features设置为true。这样就开启了Gemini 3。</p>
-<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NDQyMmZjNjMwODE3ZTZhNzQyMTVmNGYyODgzODQzZDBfMTliNjQzZjExZDk0MDEyODc1MDk0NjE0YzdiZDRkMDJfSUQ6NzU3NzY0Nzg2NDc4MTY3MTYyNF8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="images/docs/doc-image-44.webp" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
 <p>退出重新登录，然后通过/model选项开启gemini 3 pro模型。</p>
-<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MTc5NWRjNmZmOTJmODcxMjQ4ZjBmZWVlMzc1NTNlNzVfMDJhMzUxYzlhODUxMDU0MmNlNzg3Yzg3YTQ1MmZmNTNfSUQ6NzU3NzY0ODA4MjM0ODM5NTcxOF8xNzc5ODgwMjc3OjE3Nzk5NjY2NzdfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="images/docs/doc-image-45.webp" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
 <h3 id="2-claude-code-国产大模型">2 Claude Code + 国产大模型</h3>
 <p>由于这些命令行都需要接入API，因此需要购买API。目前国产主流大模型基本上都兼容claude code API，其实各家大模型都兼容OpenAI定义的API格式。我们可以自由选择DeepSeek，Kimi，GLM，Qwen，只需要购买API，然后配上每家模型的地址就行。这里我们以智谱GLM4.6为例，选择智谱GLM是因为价格便宜，支持包月模式，比单纯使用API用起来划算。</p>
 <p>1、首先，登录智谱大语言模型平台，</p>
 <p>链接：https://www.bigmodel.cn/claude-code?ic=EVALLASW61</p>
 <p>2、注册账号，购买模型，目前有一个包季60元的比较适合，每 5 小时最多约 120 次 prompts，也就是1天能使用240次左右。</p>
-<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZWY3MDJlMDgyZDA2Yzg5YmM1NTc1OWJiM2NhOTAzMDNfZTJhYTJmNWI1MzQzZTE1NzcyYjQzZTQxNzM2YzNlMzRfSUQ6NzU3NzYwMTY4NDI3NDU4MDY4Nl8xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="images/docs/doc-image-46.png" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
 <p>3、购买完成之后获取API key。</p>
 <p><strong>配置AI工具</strong></p>
 <p>配置环境，将购买的API添加到配置文件中。详细可以观看GLM官方文档。</p>
@@ -116,7 +116,7 @@ source ~/.bashrc</code></pre>
     }
 }</code></pre>
 <p>然后启动claude code，选择使用API方式就可以使用了。</p>
-<figure class="doc-figure"><img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MDhiNmQ1YmRmMTNkMTA5YTY2ZmYxMjkyNjFiMWZjODlfMTQ3NzY1MTcwYjg2ZjE4MjU2YTdhMjg1ZjU0YzBjMmRfSUQ6NzU3NzYwMTkxNjkxNTU1MTE5M18xNzc5ODgwMjc2OjE3Nzk5NjY2NzZfVjM" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
+<figure class="doc-figure"><img src="images/docs/doc-image-47.webp" alt="说明配图" loading="lazy" onerror="this.closest('figure').classList.add('is-broken')"><figcaption class="doc-figure-cap">操作示意图（若无法加载，请参考飞书原版文档）</figcaption></figure>
 <p>其他模型使用方法更加简单，只需要将变量添加到.bashrc文件中即可。例如DeepSeek。</p>
 <pre class="code-block doc-code doc-code-bash"><code># 将${DEEPSEEK_API_KEY}更换为自己的API key
 export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic
